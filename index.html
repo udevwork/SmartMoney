@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Smart money</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b563a2d3-f701-4dce-bc72-d2cf3cb1d5c9" class="page sans"><header><h1 class="page-title">Smart money</h1></header><div class="page-body"><p id="ea2781fb-2af1-4beb-97d3-4d0fbece88eb" class=""><strong>В “Библиотеке много подстраниц”, в телеграме продублированы pdf файлы</strong></p><p id="023cc36e-b5b8-4354-a99e-9414762d90c6" class="">
+</p><figure id="c72fd5c3-9392-4a79-add5-0160962bf007" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/StB,%20BtS%20c72fd5c393924a79add50160962bf007.html">StB, BtS</a></figure><figure id="f72b96b4-cb7f-4a85-bd7d-07a532ede7ff" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%92%D0%B0%D0%BB%D0%B8%D0%B4%D0%B5%D0%BD%20%D0%BB%D0%B8%20%D0%BE%D1%80%D0%B4%D0%B5%D1%80%D0%B1%D0%BB%D0%BE%D0%BA%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BF%D0%B5%D1%80%D0%B2%D0%BE%D0%B3%D0%BE%20%D1%82%D0%B5%D1%81%D1%82%D0%B0%20f72b96b4cb7f4a85bd7d07a532ede7ff.html">Валиден ли ордерблок после первого теста?</a></figure><figure id="5da75d70-fbdf-4213-ab8a-1aa5e231af75" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%9A%D0%B0%D0%BA%20%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D1%8C%20POI%205da75d70fbdf4213ab8a1aa5e231af75.html">Как определить POI ?</a></figure><figure id="2adf237c-301c-46e2-91c4-7a40357b05d0" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%9A%D0%B0%D0%BA%20%D0%BE%D1%81%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BB%D1%8F%D1%82%D1%8C%20%D0%B2%D1%85%D0%BE%D0%B4%20%D0%BD%D0%B0%20LTF%202adf237c301c46e291c47a40357b05d0.html">Как осуществлять вход на LTF?</a></figure><figure id="2ce5e743-91be-4319-b138-8245462826cc" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%9E%D0%A4%20%D0%A2%D1%80%D0%B5%D0%BD%D0%B4%202ce5e74391be4319b1388245462826cc.html">ОФ &gt; Тренд.</a></figure><figure id="18d109d4-28cb-4d3e-842e-f1e031b79d18" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20BOS%20%D0%92%20%D1%87%D0%B5%D0%BC%20%D0%BE%D1%82%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%20BOS%20%D0%B8%20SFP%2018d109d428cb4d3e842ef1e031b79d18.html">Что такое BOS? В чем отличие между BOS и SFP?</a></figure><figure id="f65b4773-5029-4679-ae71-6465574d1eb2" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20Creek%20f65b477350294679ae716465574d1eb2.html">Что такое Creek?</a></figure><figure id="50f683ce-1238-4fc9-9642-990c0c4c5ed0" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20EQH%20EQL%2050f683ce12384fc99642990c0c4c5ed0.html">Что такое EQH/EQL ?</a></figure><figure id="6c93782f-abcc-4b16-ba17-f46d19543501" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20FTA%206c93782fabcc4b16ba17f46d19543501.html">Что такое FTA?</a></figure><figure id="0be0235a-6016-417c-b2bf-98452eb08a4d" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20Long-term%20short-term%20swings%200be0235a6016417cb2bf98452eb08a4d.html">Что такое Long-term/short-term swings?</a></figure><figure id="accb0021-19b8-4489-bffc-bd05c38d6be9" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20OF%20(%D0%BE%D1%80%D0%B4%D0%B5%D1%80%20%D1%84%D0%BB%D0%BE%D1%83)%20accb002119b84489bffcbd05c38d6be9.html">Что такое OF (ордер флоу)?</a></figure><figure id="526a155d-073a-4a5f-a26f-ae28bc70649b" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20POI%20526a155d073a4a5fa26fae28bc70649b.html">Что такое POI?</a></figure><figure id="71518255-ebb7-4849-a53c-20d8fd155a06" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20Reversal%20Continuation%2071518255ebb74849a53c20d8fd155a06.html">Что такое Reversal/Continuation?</a></figure><figure id="edc0d956-5d9c-485d-9322-5d8f3f57ef3d" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20Sweep%20Raid%20edc0d9565d9c485d93225d8f3f57ef3d.html">Что такое Sweep/Raid?</a></figure><figure id="670958ad-ef43-4247-b503-936f41c72a78" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%BE%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B5%D0%B3%D0%BE%20%D1%81%D0%B2%D0%B8%D0%BF%D0%B0%20(last%20sweep%20rul%20670958adef434247b503936f41c72a78.html">Что такое правило последнего свипа (last sweep rule) ?</a></figure><figure id="1592bc50-f2f2-4b51-a80d-bb3f2d879443" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%87%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D0%B5%20%D1%81%D0%BD%D1%8F%D1%82%D0%B8%D0%B5%20%D0%BB%D0%B8%D0%BA%D0%B2%D0%B8%D0%B4%D0%BD%D0%BE%D1%81%D1%82%D0%B8%201592bc50f2f24b51a80dbb3f2d879443.html">Что такое частичное снятие ликвидности ?</a></figure><figure id="bd53b1cc-93e3-4036-b5df-2792560546d6" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Tips%20bd53b1cc93e34036b5df2792560546d6.html">Tips</a></figure><figure id="68e4345b-ab7b-458f-b939-0df9c0411a1e" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%9F%D0%BE%D0%BD%D1%8F%D1%82%D0%B8%D1%8F,%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%B3%D1%83%D1%82%20%D0%B2%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D1%8C%20%D0%B2%20%D0%B7%D0%B0%D0%B1%D0%BB%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5%2068e4345bab7b458fb9390df9c0411a1e.html">Понятия, которые могут вводить в заблуждение.</a></figure><figure id="61f7d67e-af0b-4aef-9c38-ac57cbd5207e" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%20%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B1%D1%8D%D0%BA%D1%82%D0%B5%D1%81%D1%82%D0%B0%2061f7d67eaf0b4aef9c38ac57cbd5207e.html">Пример проведения бэктеста.</a></figure><figure id="c08dd4f9-4890-44f3-ac81-781b4298c48d" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20SFP%20c08dd4f9489044f3ac81781b4298c48d.html">Работа с SFP.</a></figure><figure id="649e9ce7-458b-49ca-8d5c-161178119a05" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A2%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20649e9ce7458b49ca8d5c161178119a05.html">Терминология.</a></figure><figure id="04710ad4-8abf-4d71-8fc3-6a37bb80d4ad" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%20%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%B0%20%D1%81%20%D1%87%D1%83%D0%B6%D0%B8%D0%BC%20%D0%BA%D0%B0%D0%BF%D0%B8%D1%82%D0%B0%D0%BB%D0%BE%D0%BC%2004710ad48abf4d718fc36a37bb80d4ad.html">Условия сотрудничества с чужим капиталом.</a></figure><figure id="5fd7dcdc-caae-4f4b-9f5d-167d37819543" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B7%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%D1%81%D1%82%D0%B8%205fd7dcdccaae4f4b9f5d167d37819543.html">Временные закономерности.</a></figure><figure id="d01e24d5-d4af-4dc9-8252-cbd69f98c33a" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B8%CC%86%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%20d01e24d5d4af4dc98252cbd69f98c33a.html">Что такое открытый интерес?</a></figure><figure id="19b1c3ba-290a-413d-a1ff-7ed13ac0967a" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%A7%D1%82%D0%BE%20%D1%82%D0%B0%D0%BA%D0%BE%D0%B5%20%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0%20%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20(%D1%84%D0%B0%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3)%2019b1c3ba290a413da1ff7ed13ac0967a.html">Что такое ставка финансирования (фандинг)?</a></figure><figure id="acec370f-dbbc-4847-928b-6253f0a6ad35" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B%20%D1%81%D0%B4%D0%B5%D0%BB%D0%BE%D0%BA%20QM(Raid%20+%20Bos)%20acec370fdbbc4847928b6253f0a6ad35.html">Примеры сделок QM(Raid + Bos)</a></figure><figure id="c989e0a7-a5af-4e05-a244-9b1c81e71d2b" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b.html">Forex basic guide</a></figure><figure id="59d8eaea-a562-4385-a06f-754a1bc07746" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B%20%D1%81%D0%B4%D0%B5%D0%BB%D0%BE%D0%BA%20QM(Raid%20+%20Bos)%20FOREX%2059d8eaeaa5624385a06f754a1bc07746.html">Примеры сделок QM(Raid + Bos) FOREX</a></figure><figure id="5a449452-3046-458e-9cb7-83e67537bca2" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Trading%20notes%205a4494523046458e9cb783e67537bca2.html">Trading notes.</a></figure><figure id="69b8728c-561a-4e77-942b-5ab529549246" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Common%20mistakes%2069b8728c561a4e77942b5ab529549246.html">Common mistakes</a></figure><figure id="94dad7a7-fed3-4a03-b3b9-8c7d53a070ac" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Checklist%20for%20entry%2094dad7a7fed34a03b3b98c7d53a070ac.html">Checklist for entry</a></figure><figure id="64428180-5200-4e94-918e-c8029f1a52ce" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Win%20Rate%20Example%206442818052004e94918ec8029f1a52ce.html">Win Rate Example</a></figure><figure id="daa5cd4f-e791-48bc-8f16-34dd626e11f2" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Crypto%20tools%20daa5cd4fe79148bc8f1634dd626e11f2.html">Crypto tools</a></figure><figure id="00f6907b-f5b5-460d-8c68-018485a33f9f" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Guide%20for%20Metamask%20Wallet%2000f6907bf5b5460d8c68018485a33f9f.html">Guide for Metamask Wallet</a></figure><figure id="1fa3ae34-1af5-4c61-9eda-c33b2e3a06b5" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Spot%20tools%201fa3ae341af54c619edac33b2e3a06b5.html">Spot tools</a></figure><figure id="ae79d8e2-6345-49ff-9920-563e4c6c8947" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D0%B8%D1%87%D0%BA%D0%B0%20%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20ae79d8e2634549ff9920563e4c6c8947.html">Методичка анализа проекта.</a></figure><figure id="47aad155-a5dc-4b36-8773-0d183b9e3990" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/FX%20tools%2047aad155a5dc4b3687730d183b9e3990.html">FX tools.</a></figure><figure id="1bbd9671-bf59-4b07-89c2-20131e5ff261" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/FTMO%201bbd9671bf594b0789c220131e5ff261.html">FTMO</a></figure><figure id="384bc686-40fe-4817-964a-0c9833429622" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Guide%20for%20Meta%20Trader%205%20384bc68640fe4817964a0c9833429622.html">Guide for Meta Trader 5</a></figure><figure id="8312763a-7102-48e1-8447-3549eb9259f2" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Sessions%20on%20Indicies%208312763a710248e184473549eb9259f2.html">Sessions on Indicies</a></figure><figure id="099daf44-9a43-4208-badd-9e16efeea46c" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Raid%20reversal%20for%20FX%20099daf449a434208badd9e16efeea46c.html">Raid reversal for FX</a></figure><figure id="6e2a2411-1ef1-49ee-ab8a-3257351a61d6" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/FX%20Lot%20Calculator%206e2a24111ef149eeab8a3257351a61d6.html">FX Lot Calculator</a></figure><figure id="096b10e6-97bd-4019-a04e-12c296fe89f1" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Portfolio%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B8%CC%86%D1%82%D0%B5%20Myfxbook%20096b10e697bd4019a04e12c296fe89f1.html">Portfolio на сайте Myfxbook</a></figure><figure id="260e5021-c4f3-4c7d-abef-ecf871432bc6" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/%D0%91%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0%20260e5021c4f34c7dabefecf871432bc6.html">Библиотека</a></figure><figure id="ad6eafe7-583d-4655-9d60-9c4e14eedf10" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Strategy%20ad6eafe7583d46559d609c4e14eedf10.html">Strategy</a></figure><figure id="f9eb96d5-dd4a-4d8c-af4e-264189ca0059" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Trading%20strategy%20-%20cryptomannn%20f9eb96d5dd4a4d8caf4e264189ca0059.html">Trading strategy - cryptomannn. </a></figure><figure id="61fdb026-9f62-4db8-b5c3-20badb677ccb" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Indicators%2061fdb0269f624db8b5c320badb677ccb.html">Indicators</a></figure><figure id="698f0ba6-8ea2-4951-9de1-b8430cd88def" class="link-to-page"><a href="Smart%20money%20b563a2d3f7014dcebc72d2cf3cb1d5c9/Backtest%20698f0ba68ea249519de1b8430cd88def.html">Backtest</a></figure></div></article></body></html>

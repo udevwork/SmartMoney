@@ -1,0 +1,694 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Strategy</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ad6eafe7-583d-4655-9d60-9c4e14eedf10" class="page sans"><header><h1 class="page-title">Strategy</h1></header><div class="page-body"><figure id="417919c0-fd15-4c95-bb2b-8ed6fc59b24b" class="link-to-page"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/2022%20%D0%A2%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D1%8B%D0%B8%CC%86%20%D0%BF%D0%BB%D0%B0%D0%BD(%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80)%20(1)%20417919c0fd154c95bb2b8ed6fc59b24b.html">2022 Торговый план(пример). (1)</a></figure><hr id="475e37e9-857d-41e0-8fbe-36ec818757d5"/><nav id="bfef15e8-a5ab-40ba-bb3c-70dc9f1a5619" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#64a777db-91eb-4b42-a25b-049dd7bf27f5"><em><span style="border-bottom:0.05em solid">Перед началом торговой сессии:</span></em></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#030889f5-05ca-4bca-ac57-8b62a822ebcc"><span style="border-bottom:0.05em solid"><em>General</em></span><span style="border-bottom:0.05em solid">.</span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#01ef9bae-e556-4e22-a6df-d8f6ea02cb5d"><span style="border-bottom:0.05em solid"><strong><em>Position management.</em></strong></span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1ca68018-8ff0-410f-9f69-a2c732eabe71"><span style="border-bottom:0.05em solid"><em><strong>Position opening.</strong></em></span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#66351fb5-339c-4348-a483-ccb0b6c59cac"><span style="border-bottom:0.05em solid"><em>Trades guide.</em></span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2b0654e1-f8dc-4bd7-993c-ba49b127cc81"><span style="border-bottom:0.05em solid"><em>Tips.</em></span></a></div></nav><hr id="489ab413-d51d-40ae-aa4d-401781835b1e"/><h3 id="64a777db-91eb-4b42-a25b-049dd7bf27f5" class="block-color-yellow_background"><em><span style="border-bottom:0.05em solid">Перед началом торговой сессии:</span></em></h3><ol type="1" id="ed960d0d-a278-4373-bf25-4376d4ecc5b0" class="numbered-list" start="1"><li>Анализ своего состояния. Спросите у самого себя спокойны ли вы, как вы себя чувствуете, не мешает вам что-то делать анализ, и работать в эту минуту, или день. Приготовление всех технических элементов (журнал, калькулятор риска, терминал).</li></ol><ol type="1" id="eb58e96b-b489-4706-8a79-20b8eedd6588" class="numbered-list" start="2"><li>Последовательность анализа:
+- daily/weekly/monthly TF.
+- OF.
+- sweep. 
+- supply/demand.
+- opens.</li></ol><ol type="1" id="04e3435b-7bee-4c22-9fbc-ba844158928a" class="numbered-list" start="3"><li>Торговый план для развития сценария в двух направлениях, его инвалидация</li></ol><ol type="1" id="18a7abd4-6155-44ec-be5a-bcfbf47feb55" class="numbered-list" start="4"><li>FX выделяем значимые свинги (asia low/high) смотрим совпадает ли анализ ликвидности со стороны сессий с контекстом ПА.</li></ol><h3 id="030889f5-05ca-4bca-ac57-8b62a822ebcc" class="block-color-yellow_background"><span style="border-bottom:0.05em solid"><em>General</em></span><span style="border-bottom:0.05em solid">.</span></h3><ol type="1" id="5c058b77-14da-48d4-b9f2-bbba1b35f94d" class="numbered-list" start="1"><li>Sweep of sweep rule (несколько свипов внутри пои).</li></ol><ol type="1" id="614f7b56-ab7c-4eca-8697-5d2e3735492c" class="numbered-list" start="2"><li>Протестированный StB / BtS валиден.</li></ol><ol type="1" id="04ebb709-e715-4690-ac53-d9157ea9b317" class="numbered-list" start="3"><li>Если на HTF присутствует чистый StB / BtS, а на LTF есть не снятая ликвидность, то его можно использовать как POI.</li></ol><figure id="b72a6b69-018e-4fea-b86a-8489916bc683" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled.png"><img style="width:1674px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled.png"/></a></figure><ol type="1" id="375e77e1-373d-498e-be29-f5a96d9b4287" class="numbered-list" start="4"><li>Тренд &gt; свип. 
+Когда цена достигает значительного максимума / минимума, это не означает, что 100%
+произойдет разворот. Цена может скорректироваться продолжить движение синхронно
+с трендом.</li></ol><figure id="4b1eb433-5ede-4687-ba5a-44550b991ae3" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(1).png"><img style="width:2000px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(1).png"/></a></figure><p id="6109fe7b-f823-41b1-8dbf-6201d931aeb5" class="">Для ловли разворотов против тренда HTF необходим m3-m5 BOS.
+Когда тренд достаточно ясен, и цена движется, давая реакцию - отскок (HTF sweep+LTF
+разворот), торговать можно, но это рискованно.</p><p id="868e9807-3dc0-4dcf-8f0d-4e29ca0973d9" class="">Поэтому, как только цена показывает какой-либо разворот, синхронизируется с структурой - стоит прекратить торговлю</p><ol type="1" id="2b944b60-b67e-417e-9ebd-37d39abad2b2" class="numbered-list" start="5"><li>Ренжирование структуры для идентификации точек слома структуры (BOS)</li></ol><figure id="6f132b15-82d3-4d7f-94b4-6bc45a41b2a0" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(2).png"><img style="width:2000px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(2).png"/></a></figure><ol type="1" id="29737a7f-2b70-4763-869d-166bf768a33b" class="numbered-list" start="6"><li>Всегда проверяйте несколько брокеров.</li></ol><ol type="1" id="13f5a11e-b0d4-4423-a816-73936a47bd9c" class="numbered-list" start="7"><li>Нет дневной цели. Бывают дни в которые нет сделок.</li></ol><ol type="1" id="a8f6fd11-eeb2-41a9-adce-df3e4ed1bf6e" class="numbered-list" start="8"><li>Разворот может произойти намного дальше от начального SH подумайте насколько велик фитиль при формировании SFP.</li></ol><ol type="1" id="256becc9-08e0-49d4-9756-ce1cfcbf34d1" class="numbered-list" start="9"><li>Правило последнего свипа (TF не имеет значения. Последний дневной свип&gt;свип на месячном таймфрейме).</li></ol><ol type="1" id="b16257d1-e451-4a15-887b-bfbbc5b1de17" class="numbered-list" start="10"><li>Позиция может быть открыта только во время Kill Zone.</li></ol><ol type="1" id="b59c17fc-5a42-4cac-807a-a6cfb13dd989" class="numbered-list" start="11"><li>Для идентификации POI необходимо указать как StB / BtS как на HTF, так и на LTF.</li></ol><ol type="1" id="22089736-8fdf-4665-af6b-1f140216f6ab" class="numbered-list" start="12"><li>Рассмотрите картину на HTF. Возможные максимумы / минимумы, которые могут быть свипнуты POI / FTA где может произойти разворот.</li></ol><ol type="1" id="2f42ebcd-f36a-4ab4-82a0-a49cb8729848" class="numbered-list" start="13"><li>Следить за свипами (OF).</li></ol><ol type="1" id="76f02b00-d618-423d-bd1a-b1955fd98a71" class="numbered-list" start="14"><li>StB/BtS против тренда ненадежны, если не происходит смены МС. BOS необходим для
+открытия позиции от StB/BtS (OF !). Должна быть смена структуры, чтобы использовать
+такой StB. Открытие позиции от такого StB возможно, потому что он может дать реакцию
+в рамках дальнейшей коррекции, но это рискованный сценарий.</li></ol><figure id="629c1190-cfee-48c3-8b4d-b84eb0dc1cd9" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(3).png"><img style="width:2000px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(3).png"/></a></figure><ol type="1" id="018a71de-4713-4158-a0bd-5670e2802918" class="numbered-list" start="15"><li>&quot;Некрасивые&quot;  BtS/StB, которые имеют большой размер, и захватывали ликвидность-валидны.</li></ol><ol type="1" id="a940f854-d2dd-46da-8302-61d42119c8db" class="numbered-list" start="16"><li>Свип во время Лондонского KZ является разворотным.</li></ol><ol type="1" id="cccbb8bb-b124-440f-acee-6b30468cdf60" class="numbered-list" start="17"><li>Лондон дает RTO внутри которого создается BtS/StB.</li></ol><ol type="1" id="ac520614-a17a-441b-b1ba-03925e5b9502" class="numbered-list" start="18"><li>Не тестированные POI могут быть протестированными гораздо позже. Не пренебрегайте этим.</li></ol><ol type="1" id="18260505-bac7-4d12-bd13-bb46a5d08913" class="numbered-list" start="19"><li>Во время NY KZ часто происходит разворот.</li></ol><ol type="1" id="369c3b9b-97c0-4b09-bdf8-bb0c8794f3d4" class="numbered-list" start="20"><li>Правило охоты за ликвидностью .</li></ol><ol type="1" id="4f4a5487-785c-4fcd-8048-abe9b36d9e87" class="numbered-list" start="21"><li>Необходимо учитывать LoE.</li></ol><ol type="1" id="301652f4-4135-46df-a735-188e2b0e90ff" class="numbered-list" start="22"><li>OF &gt; liq pools  (eql,eqh).</li></ol><ol type="1" id="6a969859-38dc-4151-b7d7-3908be8a9fde" class="numbered-list" start="23"><li>&quot;Потенциально&quot; сформированное SFP спустя 10 минут может закрыться не как SFP. Всегда учитывайте это Тренд&gt;свип.</li></ol><ol type="1" id="adab6a42-258e-4e77-9e41-5d83c25a75c3" class="numbered-list" start="24"><li>StB / BtS, который создавал eql / eqh выше / ниже MS, не может использоваться в качестве точки интереса для входа в позиции. Лучше пропустить.</li></ol><ol type="1" id="68b4e084-5159-4407-a9a5-50e7a87d0c33" class="numbered-list" start="25"><li>Структура&gt;Свип.</li></ol><p id="3328071c-a322-4421-a601-9053d9ebee15" class="">
+</p><figure id="59547659-0103-40bd-9097-358bd0e20013" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(4).png"><img style="width:2000px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(4).png"/></a></figure><ol type="1" id="28901dff-90ff-4bc0-bff1-df52d344dcbb" class="numbered-list" start="26"><li>Ключевые точки для разворотов: </li></ol><ul id="ae75e527-a38a-4ca8-8aa6-c1b5af735684" class="bulleted-list"><li style="list-style-type:disc">LO High / Low.</li></ul><ul id="7a1c37df-89e7-4acf-a811-020dcfe2a242" class="bulleted-list"><li style="list-style-type:disc">Азиатский High / Low.</li></ul><ul id="12b46fee-84c2-4513-8f71-caa0f19c410a" class="bulleted-list"><li style="list-style-type:disc">Значимый на HTF High / Low.</li></ul><ol type="1" id="fabef10d-753a-4163-8e97-666d4ead1b0b" class="numbered-list" start="27"><li>Проверяйте HTF перед входом в позицию, выделяйте свипы и потенциальные зона разворота.</li></ol><p id="0d62d7f3-4885-4fb8-9494-f7acbeca945e" class="">1. Тест POI ( в синхроне с трендом ) + m1 подтверждение ( BtS/StB ) внутри
+2. Свип в синхроне с трендом+m1 подтверждение во время свипа  ( BtS/StB )
+3. Тест POI / Liq sweep - без подтверждения (разворотный: StB / BtS внутри)&gt; нужен m5 BOS . Позиция может быть открыта после манипуляции синхронно с OF.</p><h3 id="01ef9bae-e556-4e22-a6df-d8f6ea02cb5d" class="block-color-yellow_background"><span style="border-bottom:0.05em solid"><strong><em>Position management.</em></strong></span></h3><ol type="1" id="f0b035cc-14b9-4d15-af51-a272a085ca19" class="numbered-list" start="1"><li>StB / BtS против открытой вами позиции в контексте тестирования FTA / liq sweep - сокращение позиции.</li></ol><ol type="1" id="012d0e83-d675-42a0-8ae5-967322036c31" class="numbered-list" start="2"><li>StB / BtS против открытой позиции в локальной MS m5-m3 - перевод стопа в безубыток.</li></ol><ol type="1" id="63abd6aa-abd9-4cbb-978b-7bb8c3e12207" class="numbered-list" start="3"><li>Цена может развернуться без каких-либо признаков разворота на LTF - 3r = заплати трейдеру.</li></ol><ol type="1" id="29515363-0a6b-4a49-9198-ee15fdee8cfe" class="numbered-list" start="4"><li>Проторговка внутри BtS / StB разрешены. BtS / StB действителен до тех пор, пока не сломается.</li></ol><ol type="1" id="9f28f119-b162-44fd-b7c1-18e2f5e6ed05" class="numbered-list" start="5"><li>Если цена развернется после теста FTA либо съема ликвидности и после теста есть  подтверждение для входа, но тренд против будущей позиции - открыть позицию (после m5 BOS). <p id="71d19f34-5452-485d-91f7-c6d1fb1ab383" class="">Если после небольшого отскока признаки разворота (StB / BtS) наблюдаются внутри FTA / POI или после liq съема ликвидности - сократить открытую позицию, если вы подвергаетесь риску.</p></li></ol><p id="c50961be-c671-49e6-9882-b2b29a3b5b9c" class="">
+</p><figure id="4b9a6647-d48c-4958-9317-ce95222380ff" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(5).png"><img style="width:2000px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled_(5).png"/></a></figure><p id="55e4c3c0-ee05-41fb-b22a-8db21b765f7c" class="">Тренд&gt;свип. Свип может спровоцировать отскок.</p><ol type="1" id="f07af0a6-48f2-4cb5-908d-f4c659063d88" class="numbered-list" start="6"><li>m1 BtS/StB после теста FTA / sweep против открытой позиции достаточно для среза открытой позиции. Не нужно ждать м3-м5 BOS.</li></ol><h3 id="1ca68018-8ff0-410f-9f69-a2c732eabe71" class="block-color-yellow_background"><span style="border-bottom:0.05em solid"><em><strong>Position opening.</strong></em></span></h3><ol type="1" id="875198df-5501-44e0-93df-ec864461e0ff" class="numbered-list" start="1"><li>Тест POI (в синхроне с трендом) + m1 подтверждение (BtS/StB) внутри.</li></ol><ol type="1" id="fb18d89c-20d8-44b6-81c9-a0f75cdc0fa0" class="numbered-list" start="2"><li>Свип в синхроне с трендом+m1 подтверждение во время свипа  (BtS/StB).</li></ol><ol type="1" id="4e28c6f8-fc3a-4611-be6c-cbe86d7c2a56" class="numbered-list" start="3"><li>Тест POI / Liq sweep - без подтверждения (разворотный: StB / BtS внутри)&gt; нужен m5 BOS . Позиция может быть открыта после манипуляции синхронно с OF.</li></ol><figure id="ce118058-2be7-4a3b-9a11-194ef41c858e" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled%201.png"><img style="width:4096px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled%201.png"/></a></figure><ol type="1" id="9d5743db-6d55-497f-9f85-75f90a7ce1ff" class="numbered-list" start="4"><li>Открытие позиции следуя OF:  m5 sweep + m1 StB/BtS во время свипа для открытия позиции.</li></ol><ol type="1" id="c952ce97-6327-4a82-b464-76c9b1c29376" class="numbered-list" start="5"><li>Если вход от m1 после свипа пропущен то для открытия позиции можно рассмотреть целый m3/m5 BtS/StB. Никаких дополнительных подтверждений внутри не требуется.</li></ol><ol type="1" id="da755403-b5ca-42d5-9872-d8dcf921570b" class="numbered-list" start="6"><li>В пределах диапазона каждый SH + LTF.</li></ol><ol type="1" id="57f5b350-226b-45a3-9e65-7b5324c24433" class="numbered-list" start="7"><li>Если диапазон BtS/StB слишком большой, используйте ее как POI.</li></ol><ol type="1" id="97405187-8b03-4f7b-b5de-5704d6dafb63" class="numbered-list" start="8"><li>Если при втором свипе во время теста POI вы видите отличный пере заход-возьмите позицию. При необходимости откройте дважды.</li></ol><figure id="eb162497-085d-4a26-b53b-621bc3373132" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled%202.png"><img style="width:1449px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled%202.png"/></a></figure><ol type="1" id="b9622aba-bd34-4415-b2a6-4bec5574d61c" class="numbered-list" start="9"><li>Если во время теста POI формируется StB / BtS на m1 и m3 (например), вероятность теста m3 выше. Так что, если размер SL позволяет занять позицию опираясь на m3 StB / BtS, берите ее. Не нужно дождаться  RTO внутри m1 из-за системы 3r TP.</li></ol><ol type="1" id="b7e273dd-1acc-4a6e-9555-5b0840772420" class="numbered-list" start="10"><li>Входите на продолжении тренда, чтобы не ловить разворот.</li></ol><ol type="1" id="9e6989c6-0e27-4093-92ff-2e4dbc9b3625" class="numbered-list" start="11"><li>Не открывайте позицию на продолжении после свипа. либо реакции на FTA.</li></ol><p id="dfd47926-70cb-4775-8c65-585ae621b0f0" class="">12. Если цена показывает накопление / распределение на LTF, проверьте HTF на предмет потенциальной области разворота, которая могла быть нeзaмeчeнной при анализе.</p><ol type="1" id="67d0ded0-e8ac-4ab1-bf91-08723c7eb541" class="numbered-list" start="13"><li>Для входа на развороте подтверждения в виде m1 BOS недостаточно. Открытие позиции синхронно с OF = сценарий без риска.</li></ol><ol type="1" id="7f0ce5ef-9729-4b0e-90e2-7084db1d955e" class="numbered-list" start="14"><li>Во время бокового движения ждите SH+LTF разворот для открытия позиций при HTF low/high sweep + LTF разворот, m5 BOS в этом случае не важен ТОЛЬКО ВНУТРИ РЕНДЖА -КОГДА НЕТ ЧЕТКОГО ТРЕНДА. Seek &amp; Destroy day scenario.</li></ol><figure id="7773d0be-8c4c-46fb-bdd8-2dd2bd152bd7" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled%203.png"><img style="width:4096px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled%203.png"/></a></figure><figure id="19a63e0a-7947-4836-a05f-8e264e6b7fa5" class="image"><a href="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled%204.png"><img style="width:4096px" src="Strategy%20ad6eafe7583d46559d609c4e14eedf10/Untitled%204.png"/></a></figure><h3 id="66351fb5-339c-4348-a483-ccb0b6c59cac" class="block-color-yellow_background"><span style="border-bottom:0.05em solid"><em>Trades guide.</em></span></h3><p id="a76e6b29-2c4d-4eb3-b574-2c55165d1620" class=""><em>RR 1:3 - minimum ratio.</em><strong>
+</strong><span style="border-bottom:0.05em solid"><em>System</em></span><span style="border-bottom:0.05em solid">:</span>
+<strong><span style="border-bottom:0.05em solid"><em>Swing trades - 2-3%
+</em></span></strong><em>1H до 3 дней.
+4H до двух недель.
+1D до двух месяцев.
+1W до шести месяцев.</em></p><p id="6832efe3-115d-4d0e-a6b1-3a657c254e77" class=""><em><span style="border-bottom:0.05em solid"><strong>LTF trades - 1%</strong></span></em></p><h3 id="2b0654e1-f8dc-4bd7-993c-ba49b127cc81" class="block-color-yellow_background"><span style="border-bottom:0.05em solid"><em>Tips.</em></span></h3><ol type="1" id="936ee8f6-5c3f-4bd9-8fb4-9440306d3b97" class="numbered-list" start="1"><li>Заранее знать самые популярные объемы на мажорных парах.
+Пример: знать объем для открытия позиции по BTC в диапазоне от 50 до 500 пунктов, с каждой ступенью повышения в размере 50 пунктов. Не круглые значения - округлять в большую сторону.</li></ol><ol type="1" id="a00f632f-1bea-4fd7-ac1a-b1e1f91e44af" class="numbered-list" start="2"><li>При наличии одного ПК или одного монитора - открыть терминал на телефоне, чтоб ускорить время входа и избавиться от переключений между окнами.</li></ol><ol type="1" id="a676e2ae-f3cc-4b55-a03d-85fceb95d0e8" class="numbered-list" start="3"><li>Для работы с большим количеством пар, для каждой пары иметь отдельную открытую вкладку на бирже, чтоб срезать время загрузки и поиска котировки. Это советую делать, как на Trading View, так и на бирже.</li></ol><ol type="1" id="7ff5015c-19a6-4828-8d92-b3623cf5052d" class="numbered-list" start="4"><li>Открытие сделки можно ускорить вбиванием цены со стакана. На любой бирже можно использовать опцию для быстрого входа лимитным ордером простым нажатием на цену со стакана и она быстро отобразится в меню открытия позиций.</li></ol><ol type="1" id="298218d5-f0ae-481b-9503-60a6f9b0e8f3" class="numbered-list" start="5"><li>В начале дня забиваю в панели управления позиции сразу же самый популярный объем на случай экстренной ситуации. Зачастую это уменьшенный вариант позиции</li></ol><p id="d5998e1d-374b-4542-a480-6c92f705d69b" class="">
+</p></div></article></body></html>

@@ -1,0 +1,669 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Checklist for entry</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="94dad7a7-fed3-4a03-b3b9-8c7d53a070ac" class="page sans"><header><h1 class="page-title">Checklist for entry</h1></header><div class="page-body"><blockquote id="00f0d62c-d68f-44cd-8d9f-82852cf7126b" class=""><em>P.S. Данная информация создана лишь с целью примера возможного анализа графиков перед открытием сделки. Рекомендуется составить свой личный список на основании бектестов и вашей Торговой Стратегии.</em></blockquote><figure class="callout" style="white-space:pre-wrap;display:flex" id="cb409975-b00b-40ea-a3ef-dd6f2260cbbd"><div style="font-size:1.5em"><span class="icon">🔖</span></div><div style="width:100%"><em>Для входа в сделку на продолжение, оптимально входить по сформированному OF (m5 или m15). Сделки на продолжение по OF, но против свипа внешней ликвидности (External LG from PDH/PDL, etc) лучше пропускать.</em></div></figure><figure class="callout" style="white-space:pre-wrap;display:flex" id="0e327581-c93f-423d-bc45-ea741d454a54"><div style="font-size:1.5em"><span class="icon">📈</span></div><div style="width:100%"><strong><em>Список информации которую нужно проверять</em></strong><strong><mark class="highlight-red"><em> </em></mark></strong><strong><span style="border-bottom:0.05em solid"><mark class="highlight-red"><em>перед входом в позицию Continuation</em></mark></span></strong><strong><mark class="highlight-red"><em>:</em></mark></strong><hr id="749ec1a1-9636-4c2f-b998-39e631ba8780"/><ol type="1" id="2e0e5604-1f58-4897-9ea0-343153cf2915" class="numbered-list" start="1"><li><em>Order Flow сильнее чем обычная структура. Если твой трейд против OF - ты уже не прав. Основная масса сделок должна быть по тренду OF. Приоритет всегда у старшего OF.</em></li></ol><div id="0693c136-ce8e-4e2a-963d-b91016e22185" class="column-list"><div id="c479ff5e-1310-44f0-9734-0b5a574c9e12" style="width:50%" class="column"><p id="730af023-fa9a-4453-811d-7928998c0559" class=""><strong>Structure m15 (fractal H&amp;L)</strong><div class="indented"><ul id="5b8c1213-b6b3-4714-a50a-675dd4922466" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="fa215cb5-bfa1-4bd5-acf6-b7b1a7648f0f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p><p id="50943d36-109b-48cb-b99b-93de51741354" class=""><strong>Structure m5 (fractal H&amp;L)</strong><div class="indented"><ul id="e07ce28d-1736-467f-9c60-fa0d089c3f1c" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="44c1db48-dddf-4f15-b65f-2f7309081cbc" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p><p id="8e20baa9-2c61-42e5-ba81-30f6b2509d96" class=""><strong>Is LTF Confirmation required?</strong><div class="indented"><ul id="32ff5f96-f34d-49a9-871c-90c338b14aa6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Yes</span></li></ul><ul id="967fe906-38d9-4306-99f4-6572627fcbc2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">No</span></li></ul></div></p></div><div id="76df429f-64e9-4478-a051-114d6374a635" style="width:50%" class="column"><p id="c4d1912a-a87d-4125-84f7-c71acb99613a" class=""><strong>Order Flow m15 </strong><div class="indented"><ul id="8d037230-a1a2-4cc3-93f6-a56adc90d7cd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="5e8b0de6-8c31-41a9-93d6-390d561c6202" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p><p id="cd0680f7-6b90-4f37-8cff-cac6d2169a90" class=""><strong>Order Flow m5</strong><div class="indented"><ul id="260e3974-930d-49d6-9521-9c01bf71347e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="354ccdd3-467a-439e-a3e0-b8bf11b558d9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p><p id="7b6bb5ca-0697-48e3-a695-dead2aa10461" class=""><strong>There is LTF confirmation?</strong><div class="indented"><ul id="180b75ed-d627-4081-b97d-2bda551d8d99" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Yes</span></li></ul><ul id="89ca7fc3-7b75-4a78-a42b-bfa3fb60b754" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">No</span></li></ul></div></p></div></div><hr id="a6e7a6b0-3a90-45e8-8399-8fe1951e85fa"/><ol type="1" id="b6ad87e3-1922-450f-8919-893ab69e249d" class="numbered-list" start="2"><li><em>Не нужно открывать позиции </em><em><strong>против </strong></em><em>свипов важных H&amp;L (HTF swing H/L, PDH, PDL, etc). Если твой трейд против свипа - ты можешь быть не прав или тайминги отработки сделки будут затянуты.</em></li></ol><div id="19afe30d-83d9-4ce6-961c-49f215a48da8" class="column-list"><div id="b6a2ed00-4c76-49ee-812b-755381c83906" style="width:50%" class="column"><p id="6854b7a0-e7fc-497a-8e8e-3157cc4507ae" class=""><strong>Last </strong><span style="border-bottom:0.05em solid"><strong>Internal</strong></span><strong> LG from Local HTF H&amp;L</strong><div class="indented"><ul id="78810655-4176-4c18-bf3d-27de5a8e58a1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="358b933e-82dc-4629-873f-b591d54400a3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p></div><div id="35f0bb88-864c-4c15-8684-75d53ebc6305" style="width:50%" class="column"><p id="6cc5861b-b53b-48d0-a139-fdca42a4d46a" class=""><strong>Last </strong><span style="border-bottom:0.05em solid"><strong>External</strong></span><strong> LG from HTF H&amp;L, PDL/PDH</strong><div class="indented"><ul id="774c3017-1e3d-4f64-82a2-6d7f4d73c2e8" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="03ff6e63-e228-4655-aa37-ed0371b9551e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p></div></div><hr id="2112565d-5fb3-49d3-b13f-81e1f719a9b4"/><ol type="1" id="22de22c8-8684-44cf-82b4-a6e3c5276cb9" class="numbered-list" start="3"><li><em>Важно входить в позицию, когда цена готова идти дальше. То есть после отката к зонам OTE &amp; 0.5 или перекрытия ценовых магнитов в виде имбалансов.</em></li></ol><div id="a1efc3ff-6ae6-4616-b3c1-c4ab4c016069" class="column-list"><div id="e49ab3de-28cb-4ec4-a445-9e269487ed27" style="width:50%" class="column"><p id="24fb9c7e-2c44-4eb3-8be7-196458e882d3" class=""><strong>Premium &amp; Discount in m15/m5 structure</strong><div class="indented"><ul id="1fe2da30-c702-4abb-95fe-3f6de12489b7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Discount (for Long)</span></li></ul><ul id="672717f2-de44-47f7-8160-47ef1ec7f70b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Premium (for Short)</span></li></ul></div></p></div><div id="87b7902a-0e9b-45c2-bcad-9b9736a822a9" style="width:50%" class="column"><p id="290dc2a9-ba80-489b-ba17-99cff383f8c8" class=""><strong>FVG FF at m15/m5 </strong><div class="indented"><ul id="e63c547a-96cb-4fd1-ae39-c2773e4fe79d" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="bf9880e6-ba13-4a51-9894-184082bf3ace" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p></div></div></div></figure><figure class="callout" style="white-space:pre-wrap;display:flex" id="7f1226f4-b6c1-44ba-92ce-4f409a64dac1"><div style="font-size:1.5em"><span class="icon">🔖</span></div><div style="width:100%"><em>Для входа в сделку на разворот, важно входить после свипа ликвидности с наличием LTF Bos как подтверждение входа. Сделки после свипа, но против OF рекомендуется пропускать, или ставить тейк локально, а не на перелой. </em></div></figure><figure class="callout" style="white-space:pre-wrap;display:flex" id="de0c1a58-0b53-4faf-b3a3-764f2a92c7c1"><div style="font-size:1.5em"><span class="icon">📉</span></div><div style="width:100%"><strong><em>Список информации которую нужно проверять </em></strong><span style="border-bottom:0.05em solid"><mark class="highlight-red"><strong><em>перед входом в позицию Reversal</em></strong></mark></span><mark class="highlight-red"><strong><em>:</em></strong></mark><hr id="3f742c66-f49b-4fa1-ac4f-b88358a50564"/><ol type="1" id="51219428-0a92-45cb-887c-2844626fc8db" class="numbered-list" start="1"><li><em>Необходимо открывать позиции </em><em><strong>после свипов важных H&amp;L</strong></em><em> (HTF swing H/L, PDH, PDL, etc) и с обязательным наличием LTF Bos (m5 или m1).</em></li></ol><div id="20f339a0-b9de-4d7d-9e1a-e3fb10981690" class="column-list"><div id="83f5963a-fd6f-4303-96bc-a350c40b81c6" style="width:50%" class="column"><p id="cc162143-a84f-4035-ae45-64f69c042e0b" class=""><strong>Last </strong><span style="border-bottom:0.05em solid"><strong>Internal</strong></span><strong> LG from Local HTF H&amp;L</strong><div class="indented"><ul id="a990c914-d477-47d9-8a83-1774089aa5db" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="ee08a64a-d498-40ea-a517-f2add4e49236" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p><p id="e2b9b675-50a2-4847-9554-108bcdbff639" class=""><strong>Is LTF Confirmation required?</strong><div class="indented"><ul id="6aea904d-2227-4943-a854-f548cccb1a35" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Yes</span></li></ul><p id="d1490318-0b36-46a3-81e7-09656048ff22" class=""><mark class="highlight-gray"><em>других вариантов нет.</em></mark></p></div></p></div><div id="e28efc1d-0a61-4bb6-9605-a6f0cdc22298" style="width:50%" class="column"><p id="a23c647f-8834-4eab-8154-e2efe624ce35" class=""><strong>Last </strong><span style="border-bottom:0.05em solid"><strong>External</strong></span><strong> LG from HTF H&amp;L, PDL/PDH</strong><div class="indented"><ul id="be63d67d-75a3-4396-a6c1-1c87ad0ca442" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="5e65103a-bb46-4b83-8004-0350abc7ecef" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p><p id="8cc96b12-98ae-4bf8-bd82-1014590669ba" class=""><strong>There is LTF confirmation?</strong><div class="indented"><ul id="62a17e2a-aa1b-41eb-a767-d36364720701" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Yes</span></li></ul><ul id="a95bc24e-633e-42d2-b6b3-8a153e336114" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">No</span></li></ul></div></p></div></div><hr id="d8bd19db-3ae5-4f7e-8087-96ce5c60963c"/><ol type="1" id="69fa21d5-4ba3-40dd-9f46-6a6f3244b06e" class="numbered-list" start="2"><li><em>Для того, чтоб иметь больше факторов на вход в позицию, важно получить синхронизацию со старшей структурой после LTF Bos.</em> <em>Поэтому нужно работать по Order Flow HTF. Если твой трейд против OF - ты уже не прав.</em></li></ol><div id="db52c6e3-3aad-4b61-9f4d-79db9e6f52d9" class="column-list"><div id="1acaf375-cabc-4e07-97f2-284078e10707" style="width:50%" class="column"><p id="95601fbb-9400-4fcc-b360-93dffd91eed2" class=""><strong>Order Flow m15 </strong><div class="indented"><ul id="6d100780-7198-40d0-8cc7-d107a0d7db08" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="e3a43fc0-5bdc-4854-b8bf-3ca0e9992b37" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p><p id="27fe7a92-70c7-4233-b6f7-c9f408864d7f" class=""><strong>Structure m15 (fractal H&amp;L)</strong><div class="indented"><ul id="a69f5a2a-214c-4d91-8920-c6b2d71c87df" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="dedccef9-298b-4403-afd5-068a1bb44864" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p></div><div id="75bc6cb6-2575-402f-8381-1cdf49f2a8c1" style="width:50%" class="column"><p id="79f8fc72-6721-43f5-90a5-06b294122e81" class=""><strong>Order Flow m5</strong><div class="indented"><ul id="2de5b5b2-b27f-431a-9e93-61713b44537e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="b45273d0-7e5f-4071-8b0e-71ecd4c4f7ee" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p><p id="5aaba5f0-ec59-405f-8e1b-bc51b5374a47" class=""><strong>Structure m5 (fractal H&amp;L)</strong><div class="indented"><ul id="6ef41b8f-5f2a-4ded-9e72-d73db2e905a6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="53dfb4d0-2443-4b24-830f-baaf87a1d01b" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p></div></div><hr id="27f85e18-ba83-49d9-977d-931c6388e91e"/><ol type="1" id="86bbe75b-e2a2-4329-83b0-5264b16218f6" class="numbered-list" start="3"><li><em>Важно входить в позицию, когда цена готова идти дальше. То есть после отката к зонам OTE &amp; 0.5 или перекрытия ценовых магнитов в виде имбалансов.</em></li></ol><div id="e4985478-38f7-4cae-b613-5b57709112c4" class="column-list"><div id="8b999058-0c0c-4511-878d-18e252665c42" style="width:50%" class="column"><p id="268abf95-34a2-46e2-b384-59edad58288d" class=""><strong>Premium &amp; Discount in m15/m5 structure</strong><div class="indented"><ul id="cf24269b-5362-49d0-8dab-0cfaf9d3330a" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Discount (for Long)</span></li></ul><ul id="89f4a854-81ee-452d-91be-d1c06cef24f9" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Premium (for Short)</span></li></ul></div></p></div><div id="9ce7496b-6a86-4b23-b0f1-5aac11e5c1be" style="width:50%" class="column"><p id="ecbc53ed-8dec-4bc1-829d-01f52224ad63" class=""><strong>FVG FF at m15/m5 </strong><div class="indented"><ul id="3ee23fc6-70c5-4a41-bc3e-65c357999f37" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Long</span></li></ul><ul id="1222a272-9f9a-4f87-a9bc-0087940524e3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Short</span></li></ul></div></p></div></div></div></figure><figure id="838a1776-22f2-4c4e-b5c2-bd08b2d5917d" class="link-to-page"><a href="Checklist%20for%20entry%2094dad7a7fed34a03b3b98c7d53a070ac/Advanced%20checklist%20for%20entry%20(1)%20838a177622f24c4eb5c2bd08b2d5917d.html"><span class="icon">☑️</span>Advanced checklist for entry (1)</a></figure></div></article></body></html>

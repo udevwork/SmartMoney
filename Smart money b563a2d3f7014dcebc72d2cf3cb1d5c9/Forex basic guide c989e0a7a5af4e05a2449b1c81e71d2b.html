@@ -1,0 +1,673 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Forex basic guide</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c989e0a7-a5af-4e05-a244-9b1c81e71d2b" class="page sans"><header><h1 class="page-title">Forex basic guide</h1></header><div class="page-body"><nav id="29274e7a-6b14-4ea3-8917-ade2f84f1b3a" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fcd36c98-fc3c-4138-b3c3-9e445288a065"><strong>Broker</strong>.</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#17d6b3fe-344d-4076-abfc-a0da85d860b3"><strong>Спред:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5ae413a1-ff29-4a6e-9bea-5a9d07bd5c64"><strong>Как рассчитывать спред в торговле?</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#00bccd47-8154-4434-8338-aa9f709b9e22"><strong>Калькулятор размера позиции на сайте </strong><strong><a href="https://www.notion.so/MyFxBook-917b7f0084324bd6bcc6abf0890d7cde">MyFxBook</a></strong><strong> (</strong><a href="https://www.myfxbook.com/ru/forex-calculators/position-size">https://www.myfxbook.com/ru/forex-calculators/position-size</a>)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#572230c4-691d-43cd-9d44-1622fa7447bc"><strong>Новости:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#146e83be-1124-4a53-af8a-56370992fa75"><strong>Новости при выходе, которых возможны агрессивные движения по самым популярным валютам:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#58577892-2bdf-438c-afee-fc0550952966">Good luck.</a></div></nav><hr id="cbc3d53a-5bb5-449c-9d8f-fc1cbe98f048"/><h3 id="fcd36c98-fc3c-4138-b3c3-9e445288a065" class=""><strong>Broker</strong>.</h3><p id="a6cb03ca-0a45-4c16-8062-dfedc797ccb4" class="">Форекс брокеров множество. Для фильтрации неприятных знакомств со скам брокерами, мы посоветуем проверенных временем </p><ul id="ff126c51-4e68-4a41-a2f9-d8f85c673579" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.globalprime.com/row/">https://www.globalprime.com/row/</a></strong></li></ul><ul id="fae87202-ac4a-445e-9a28-03316b43d130" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.forex.com/en/">https://www.forex.com/en</a></strong></li></ul><ul id="9175b04b-5253-4f6b-9507-5ee0149f1fec" class="bulleted-list"><li style="list-style-type:disc"><strong><a href="https://www.icmarkets.com/global/ru/">https://www.icmarkets.com/global/ru/</a></strong></li></ul><p id="0c691530-f713-4c81-9ae3-929ae59b7ceb" class=""><strong>Пример ICMARKETS.</strong></p><figure id="cdc8ff55-0812-4b21-97dd-208018cfb259" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled.png"><img style="width:1946px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled.png"/></a></figure><p id="4ad3f74a-3c82-4a2d-b456-21c00b3fce2d" class="">Хотим отметить следующие рекомендации счёта:</p><figure id="7077cf3c-0070-4172-a652-64ab66426a44" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%201.png"><img style="width:1921px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%201.png"/></a></figure><ul id="b6c7026f-9ffd-47ff-b557-4e8f99198849" class="bulleted-list"><li style="list-style-type:disc">Metatrader5 для более удобного функционала торговой платформы.</li></ul><ul id="e36d9b7b-11bb-48a9-ae64-6d2f8d615974" class="bulleted-list"><li style="list-style-type:disc">Raw spread для уменьшенного спреда.</li></ul><ul id="bfc41d29-236d-48ec-a911-4623907f1e01" class="bulleted-list"><li style="list-style-type:disc">Валюта счета по желанию.</li></ul><ul id="6aa52d53-60f0-458b-a204-3263f0d634c3" class="bulleted-list"><li style="list-style-type:disc">Кредитное плечо:<figure id="bd67494d-154f-4771-824f-f0681eeddb46" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%202.png"><img style="width:657px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%202.png"/></a></figure></li></ul><p id="2a18af8c-9a6c-40a1-936c-c7403247bb8b" class=""><em>На сайте брокера вас попросят выбрать крeдитное плечо, что это?</em></p><p id="6f94ac0e-e0df-44c4-8ea2-cd4bac1fda30" class="">Кредитное плечо - это отношение депозита к лоту, с которым вы работаете. Т.e. при плече в 1:200 и депозите в 100$, вы можете открыть максимально 20 лотов, 
+плечо умножается на депозит. 20 лотов это очень много и вряд ли вам понадобится такой лотсайз при правильном риск-менеджменте для депозита в 100$. Поэтому на форексе плечо выставляется один раз при открытие счета, не надо выставлять его при каждой новой открытой сделке, на что возможности у вас и нету.</p><h3 id="17d6b3fe-344d-4076-abfc-a0da85d860b3" class=""><strong>Спред:</strong></h3><p id="338defd3-83f6-4464-92f7-50fadcb27840" class="">Спред на форекс это разница между ценами Ask и Bid, т.е. это разница между самой высокой ценой покупки и самой низкой ценой продажи.</p><p id="e6fb2ddd-3fcb-426c-ac2a-03c86a28a51e" class="">Рассмотрим спред по примеру из мобильной платформы Metatrader5:</p><p id="fb02ddc5-cc42-4df5-b2ac-a77e97f83a07" class="">Спред находится после скобок и составляет 0.3 пункта или 3 тика для пары EURUSD.
+В случае двузначного числа, скажем 33, спред будет составлять 3.3 пункта.</p><figure id="35194f90-af99-499f-9e9b-3e34dd42b333" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%203.png"><img style="width:192px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%203.png"/></a></figure><p id="8b2b0927-de39-41bb-adf5-4dd14d9c9953" class="">Рассмотрим спред по примеру из PC версии для платформы Metatrader5:</p><p id="92911965-336b-4097-9a4f-0ed81b390d2d" class="">Отображение спреда можно включить щелкнув правой кнопкой мышки в область <strong>Обзор рынка</strong>. Далее найти в конце контекстного меня <strong>Столбцы</strong> и настроить информацию для отображения.</p><p id="b1a20808-b17e-4d12-afe2-1db6977a2ed4" class="">После добавления, спред будет находится в отдельной колонке. На примере он составляет 3 тика для пары EURUSD и 110 тиков для US100.</p><figure id="3784ef55-3b4a-4906-b20a-7aafb9c5b5b5" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%204.png"><img style="width:351px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%204.png"/></a></figure><hr id="5b4018a5-2e6f-4f56-b9e7-4e33193d7b16"/><h3 id="5ae413a1-ff29-4a6e-9bea-5a9d07bd5c64" class=""><strong>Как рассчитывать спред в торговле?</strong></h3><p id="0a12f603-6eba-48a8-876d-96a61d11285b" class="">При расставлении уровня Стоп-лосс, важно учитывать спред для фильтрации преждевременного убытка.</p><p id="22ab58f6-1c22-4e1f-acb6-b7cedcdb5e18" class=""><strong>Пример:</strong></p><figure id="1eabb921-116d-4902-9c1b-81d041289519" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%205.png"><img style="width:624px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%205.png"/></a></figure><p id="d9f5ce87-808f-48fd-b013-f5260a4563da" class="">Сформировался потенциальный лонг сетап, уровень стоп-лосса выстявляется у точки свинг лоу что составляет 6.5 пункта, при касании ценой в будущем точки свинг лоу нас выбьет преждевременно по стопу не пробивая точку лоу т.е без инвалидации лонг идеи.</p><p id="cf941dc9-7e1d-43a8-af58-a449c7d2db47" class="">Для этого мы высчитываем спред + размер стоплосса в калькуляторе, ранее мы нашли спред на паре EURUSD что составлял 0.3 пункта, размер стоплосса в данной потенциальной сделке является 6.5 пунктов, получаем 6.5 + 0.3 = 6.8 пунктов, это значение и вписывается в калькулятор. (Не забываем подтянуть уровень стоплосса на 0.3 пункта ниже уровня лоу для учитывания спреда.)
+</p><figure id="27c8a659-b4a5-4f13-990c-edd9fdf5ef77" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%206.png"><img style="width:624px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%206.png"/></a></figure><hr id="3e522ea0-8e44-4ccf-8710-b7689a9bdf81"/><h3 id="00bccd47-8154-4434-8338-aa9f709b9e22" class=""><strong>Калькулятор размера позиции на сайте </strong><strong><a href="https://www.notion.so/MyFxBook-917b7f0084324bd6bcc6abf0890d7cde">MyFxBook</a></strong><strong> (</strong><a href="https://www.myfxbook.com/ru/forex-calculators/position-size">https://www.myfxbook.com/ru/forex-calculators/position-size</a>)</h3><ol type="1" id="9b5a78f6-b3e9-4fd4-bb71-2b62c874db31" class="numbered-list" start="1"><li>Выбираем пару на которой вы хотите совершить сделку.<ol type="a" id="6192282b-66e0-4969-97bb-58c7759c3fc4" class="numbered-list" start="1"><li>Валюта вашего счета.</li></ol><ol type="a" id="4827c1a5-63f4-4640-97b0-981adf9aa388" class="numbered-list" start="2"><li>Размер вашего счета.</li></ol><ol type="a" id="3a9b3b8b-03ff-4966-ac95-ec7fdfa5c956" class="numbered-list" start="3"><li>Коэффициент риска - процент риска от депозита в случае стоп-лосса.</li></ol><ol type="a" id="914d520a-5c31-4d5c-932e-844cfe503fd7" class="numbered-list" start="4"><li>Размер Сделки - не меняем значения.</li></ol><ol type="a" id="c56f7bd1-a5b6-4a5b-a604-cd7f65f18538" class="numbered-list" start="5"><li>Money - Сумма которую вы потеряете при срабатывании стоп-лосса. (1%)
+Sizing - 14.71 Лоты (это ваш лот сайз, которым вы должны войти в сделку при стоплоссе в 6.8 пункта.)</li></ol></li></ol><figure id="6b9a4d0f-5a14-4343-8124-53333c346f4c" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%207.png"><img style="width:576px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%207.png"/></a></figure><p id="7cd8545f-e58f-4b4d-aa55-c5daed7f4a40" class="">При прохождении<strong> FTMO challenge</strong> используйте наш калькулятор, который доступен в <a href="https://www.notion.so/FX-Lot-Calculator-915124a46cd942eaa7485a3085029d7a"><span class="icon">🧮</span>FX Lot Calculator</a>, а также на главной странице  </p><p id="a15bff82-931e-4768-a4c4-29d6c00a7931" class="">Калькулятор показывает нужный объем позиции с учетом комиссии 3$ за лот.</p><p id="eaec7920-6bc1-4086-98ea-9b5053f2400c" class="">Единственное различие между ним и калькулятором myfxbook — это необходимость указывать размер стопа не в пипсах, а тиках (1pips = 10 ticks).</p><figure id="f3025a30-1dfe-4772-88d6-5dfaa92fdd48" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%208.png"><img style="width:412px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%208.png"/></a></figure><figure id="df80740c-6dcc-49a8-ac7a-77b4a64dd91f" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%209.png"><img style="width:576px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%209.png"/></a></figure><hr id="e061003a-2376-432d-8d4f-e24b48042f8e"/><h3 id="572230c4-691d-43cd-9d44-1622fa7447bc" class=""><strong>Новости:</strong></h3><p id="8f73a114-5aac-4fb0-bceb-c30147ef7123" class="">Календарь новостей на рынке форекс: <a href="https://www.forexfactory.com/calendar">https://www.forexfactory.com/calendar</a></p><p id="d13c897d-4359-4c8e-a5cf-70c4af8f8b5f" class=""><em>Фильтрация:</em></p><figure id="078fb7fe-a99c-407f-8397-870cce9a8dfa" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%2010.png"><img style="width:768px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%2010.png"/></a></figure><ol type="1" id="7a070381-834b-43df-be93-47d41e180082" class="numbered-list" start="1"><li>Нажимаем на кнопку Filter</li></ol><ol type="1" id="7b077b76-f271-4f36-8fbc-166ee8274c16" class="numbered-list" start="2"><li>Убираем галочку с желтых новостей, т.е. убираем новости с минимальным или без влияния на волатильность рынка.</li></ol><ol type="1" id="323eb760-7d13-44ad-9c16-9501bcf1f69b" class="numbered-list" start="3"><li>Убираете из списка валюту если ее нету в ваших торговых котировках для фильтрации лишнего в календаре.</li></ol><figure id="c800135c-f35f-4849-bf43-77df5ba0cbec" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%2011.png"><img style="width:672px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/Untitled%2011.png"/></a></figure><h3 id="146e83be-1124-4a53-af8a-56370992fa75" class=""><strong>Новости при выходе, которых возможны агрессивные движения по самым популярным валютам:</strong></h3><figure id="baf04a04-d2ed-4cf3-ad25-0e18861fea89" class="image"><a href="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/2022-01-12_16.11.40.jpg"><img style="width:960px" src="Forex%20basic%20guide%20c989e0a7a5af4e05a2449b1c81e71d2b/2022-01-12_16.11.40.jpg"/></a></figure><h3 id="58577892-2bdf-438c-afee-fc0550952966" class="">Good luck.</h3></div></article></body></html>
