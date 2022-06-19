@@ -1,0 +1,740 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>16 Example</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a2077ef4-ce42-4bfd-b521-3af99439c013" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="16%20Example%20a2077ef4ce424bfdb5213af99439c013/Cryptomann_Notion_Page_Logo.png"/></div><h1 class="page-title">16 Example</h1><table class="properties"><tbody></tbody></table></header><div class="page-body"><nav id="33334d4c-ff66-4904-baac-c55a18ef7b5e" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#fc15220c-bed8-40f3-89ce-209e499f66a4"><em><strong>Morpheus Labs</strong></em></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#3e6a4f6e-1f52-456a-8dd8-54d626de8a7e"><em><strong>Вступление</strong></em></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e06e3826-343b-4822-8d9d-8186911a8275"><em><strong>Фундаментальный анализ</strong></em></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#771a1038-2e96-4ef3-9483-b1a6fbd48b07"><em><strong>Обзор запуска</strong></em></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7b1cf339-dee3-4a1a-907d-41fba71316da"><em><strong>Обзор проекта</strong></em></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#87792073-1726-44db-b63f-1a31a15a28ad"><em>Метрический анализ</em></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#747857f1-1eea-4bb2-b3ed-150909d03d36"><em><strong>Метрики</strong></em></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ec62c0f3-d4c0-4013-8114-00b75fd6e98a"><strong><em>ICO:</em></strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8c59edba-1b19-4b74-87cf-85ba10069e12"><strong>Распределение:</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7df6ead4-c52b-4285-abd7-aba49c4f668c">Анализ</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#261fd4f9-2d2d-4351-9c17-dc5b0555867c">Сообщество</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5ea097d6-2457-4b3a-97b5-8daa3a804d54"><strong>Социальные медиа</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#60412203-c62c-446b-a2c9-33b580367ec2"><strong>Разработка</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4bdc9340-c5af-4989-a60f-e29a7d931e12">Белая бумага:</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1bcdd0af-7b36-407a-a6db-64ea06a93fae">Дорожная карта:</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0e2afff6-ff94-4171-91d4-1ff48207d40e">Прогресс в развитии:</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#09fb96d2-b911-4fb9-851a-2ef903a99bfa"><strong>Технический анализ</strong></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8bfea90c-78c1-4989-ba71-fe1fc27e0c7b"><strong>Заключение</strong></a></div></nav><hr id="fe657c8c-6120-44e2-806b-bc4e449ae02d"/><h2 id="fc15220c-bed8-40f3-89ce-209e499f66a4" class=""><em><strong>Morpheus Labs</strong></em></h2><p id="6ccaa1d9-509b-4ef1-8ae2-6df2f2b0fd68" class="">RARI ( coin-research)</p><h2 id="3e6a4f6e-1f52-456a-8dd8-54d626de8a7e" class=""><em><strong>Вступление</strong></em></h2><p id="909340b7-874f-4409-8198-96bd1ec0bde7" class=""><em>Я надеюсь, что этот отчет окажется объективным там, где он должен быть, и справедливым по более субъективным вопросам. Для тех, кто хотел бы узнать немного больше о Morpheus Labs перед чтением этого отчета, вот несколько основных ссылок:</em></p><ul id="8382bb84-7e35-4eaf-b833-70d2f71078db" class="bulleted-list"><li style="list-style-type:disc"><a href="https://morpheuslabs.io/">Веб-сайт</a></li></ul><ul id="2cdfc215-18c7-495a-85f0-65183ed6a32e" class="bulleted-list"><li style="list-style-type:disc"><a href="https://twitter.com/morpheuslabs_io">Твиттер</a></li></ul><h2 id="e06e3826-343b-4822-8d9d-8186911a8275" class=""><em><strong>Фундаментальный анализ</strong></em></h2><p id="19e2ac92-bcc8-49d3-8211-1f5ea9d76392" class="">Имя: Morpheus Labs</p><p id="adc51fd7-4957-43e7-bebb-c7aaffbb8f39" class="">Тикер: MITX</p><p id="84cb6913-2d62-4758-961e-6386a3218477" class="">Алгоритм: ERC-20 и BEP-2</p><p id="e6b8557f-f3f9-475f-8570-82abef7e425b" class="">Сектор: Блокчейн как услуга</p><p id="2fdcd643-c231-4640-a7d4-943669bc28b6" class="">Биржи: Uniswap, Kucoin, Bilaxy, AscendEX, Binance DEX, Hotbit, HitBTC, Mooniswap, 1inch и Bitcratic</p><h3 id="771a1038-2e96-4ef3-9483-b1a6fbd48b07" class=""><em><strong>Обзор запуска</strong></em></h3><p id="fdaeb7b2-5795-4244-bda0-08900e471a6f" class="">Morpheus Labs была запущена с продажи токенов в феврале 2018 года, в результате которой было собрано 9,6 млн долларов в обмен на служебный токен Morpheus Infrastructure Token (MITX). 
+Первоначально было создано 1 млрд MITX, но вскоре после этого было сожжено 200 млн. 
+Из оставшихся 800 млн MITX, Morpheus Labs выделила 200 млн на продажу токенов, чтобы собрать средства на разработку, оставив 10% для команды, 10% для резерва, 10% для фонда; 15% для экосистемы и партнерства и 30% для будущих биржевых списков.
+MITX был выпущен по стандарту токенов ERC-20. 
+После запуска была запущена программа сжигания токенов, при этом на данный момент было сожжено 76 млн MITX из выданных 800 млн с целью максимального предложения
+700 млн MITX к октябрю 2022 года.</p><p id="b2faf400-7336-488c-b37c-6eb93ac9398d" class="">Morpheus Labs официально запустила свою платформу 25 января 2019 года.</p><h3 id="7b1cf339-dee3-4a1a-907d-41fba71316da" class=""><em><strong>Обзор проекта</strong></em></h3><p id="c3f63f38-222a-47f1-a847-5222f0a7046c" class="">Цели Morpheus Labs, мягко говоря, разнообразны, и здесь, несомненно, есть большие амбиции. Короче говоря, они стремятся упростить для организаций процесс рентабельного и эффективного использования решений на основе блокчейнов, что позволит быстрее и гибче внедрять инновации внутри и между предприятиями.</p><h2 id="87792073-1726-44db-b63f-1a31a15a28ad" class=""><em>Метрический анализ</em></h2><p id="992b8b6d-7fb8-446e-84ba-bb9922b7c0e8" class=""><em>Ниже приведен ряд важных показателей, все из которых точны по состоянию на 28 апреля 2021 года.</em></p><h3 id="747857f1-1eea-4bb2-b3ed-150909d03d36" class=""><em><strong>Метрики</strong></em></h3><p id="199c3764-181f-47fb-be52-4d582063ee48" class=""><em>Price</em>: <strong>0.105$</strong></p><p id="2c1dfa1e-4679-4e2b-8fc5-90abd2f9a0cb" class=""><em>Circulating Supply: </em><strong>423,062,426 MITX (</strong><a href="https://medium.com/morpheus-labs/morpheus-labs-token-update-treasury-edition-d2ccd8c010c9"><strong>source</strong></a><strong>)</strong></p><p id="67dcd74e-39dd-4f1c-81ab-0b12555e3034" class=""><em>Total Supply: </em><strong>723,999,995 MITX</strong></p><p id="88d03bae-200b-4788-94f5-c375fc17aac3" class=""><em>Maximum Supply: </em><strong>723,999,995 MITX</strong></p><p id="1c4439e0-00e1-4ffb-a817-24bb9ba89055" class=""><em>% of Max. Supply Minted</em>: <strong>100%</strong></p><p id="f45fcec8-e79a-4c97-8c4c-209ac2be7bd6" class=""><em>Network Value</em>: <strong>$44,279,363 (816.51 BTC)</strong></p><p id="8d8d69c3-f7b8-4149-af5a-6d485e05b776" class=""><em>Network Value at Max. Supply</em>: <strong>$75,776,663</strong></p><p id="d696379f-6d88-49e7-a3b6-13c263833e7e" class=""><em>Exchange Volume</em>: <strong>$2,698,864 ($988,410 excluding wash)</strong></p><p id="b9296910-1e39-424c-b93d-30cffcc0838e" class=""><em>Exchange Volume-to-Network Value</em>: <strong>2.23% (excluding wash)</strong></p><p id="57012774-75f9-4308-8d00-98f73f0f5905" class=""><em>Category</em>: <strong>Lowcap
+
+</strong>Volatility (30-Day):<strong> -0.1095</strong></p><p id="f5387dcc-0370-4147-b2e6-437a906a04a1" class=""><strong>*</strong><em>Волатильность рассчитывается на основе средней цены за указанный период времени, вычисляя разницу между ним и самой высокой ценой и самой низкой ценой за тот же период времени, и умножив эти цифры вместе. 
+Чем ближе к 0, тем меньше волатильность в этот период, и наоборот.</em></p><h3 id="ec62c0f3-d4c0-4013-8114-00b75fd6e98a" class=""><strong><em>ICO:</em></strong></h3><p id="95fec611-e35b-4f92-a764-702f72091395" class="">Следующие детали были взяты из этого <a href="https://icodrops.com/morpheus-labs/">источника</a> и этого <a href="https://medium.com/morpheus-labs/morpheus-labs-token-event-update-announcement-f817eba7ddda">источника</a> .</p><p id="8ed2b07b-0513-4925-b05a-e20d39f5283d" class=""><em>Период проведения ICO: </em><strong>23 февраля - 16 апреля 2018 г.</strong></p><p id="3a3c15e0-2c32-42b4-a095-601882c7d70a" class=""><em>Всего токенов: </em> <strong>800000000 MITX</strong></p><p id="b16f6607-5579-4243-bdd3-fb7006385221" class=""><em>Всего токенов, доступных для продажи</em>: <strong>200000000 MITX</strong></p><p id="eb480039-4a60-4dd6-b929-625ab5b9a8e5" class=""><em>Всего собрано:</em> ~ <strong>9 600 000 долларов</strong></p><p id="62f8c9ca-7952-4dc4-807a-52d9c04e76e5" class=""><em>Средняя цена ICO за токен: ~ </em><strong>0,05 доллара США</strong></p><p id="b27321bb-3fc8-4e74-a084-97cb883470be" class=""><em>Общее количество проданных токенов</em>: ~ <strong>190,000,000 MITX</strong></p><p id="185a64c4-b1d3-419b-9dfc-6e0b7fe5a429" class=""><em>Дополнительная информация</em>: первоначально планировалось выпустить 1 млрд MITX, но 200 млн были сожжены.</p><p id="6307c54f-0f77-45dc-97cb-3ac44ed0e1af" class=""><em>Распределение токенов:</em></p><ul id="d95f0ce0-ec85-49c7-9c68-2416753b41c2" class="bulleted-list"><li style="list-style-type:disc">Команда: 80,000,000 MITX</li></ul><ul id="30680cf7-aebe-447f-8021-e693ddbaa409" class="bulleted-list"><li style="list-style-type:disc">Фонд: 80 000 000 MITX</li></ul><ul id="d01b9305-5014-4541-be44-b334aac08693" class="bulleted-list"><li style="list-style-type:disc">Экосистема: 120,000,000 MITX</li></ul><ul id="3f863c07-f6fa-472c-bd33-b9f0f8b4e7a5" class="bulleted-list"><li style="list-style-type:disc">Резерв: 80,000,000 MITX</li></ul><ul id="392018d7-37bb-4b55-848a-3526bed2cb55" class="bulleted-list"><li style="list-style-type:disc">Листинг: 240,000,000 MITX</li></ul><ul id="23100ecf-6506-4138-b44e-c9d4be408a7a" class="bulleted-list"><li style="list-style-type:disc">Продажа токенов: 200000000 MITX</li></ul><h3 id="8c59edba-1b19-4b74-87cf-85ba10069e12" class=""><strong>Распределение:</strong></h3><p id="e98f6fd6-ec1d-49b1-b679-e2e5cd557a96" class="">Количество <em>адресов: </em><strong>111770</strong></p><p id="c2ff0f43-1246-4c83-9029-6d7083b80e49" class=""><em>В обороте по 10 основным адресам: </em><strong>9,78% </strong></p><p id="310bdd16-76cc-467a-8db1-0f662b466eee" class=""><em>В обороте по 20 основным адресам: </em><strong>13,79% </strong></p><p id="1885bce3-87ff-4f21-baa4-b32d3e35a730" class=""><em>Оборотный запас по 100 </em><strong>основным </strong><em>адресам: </em><strong>26,31% </strong></p><p id="9d40215e-7f25-4ffa-b71d-0d633d51e148" class=""><em>Количество неактивных адресов в топ-20 (30 дней бездействия): </em><strong>15 </strong></p><h3 id="7df6ead4-c52b-4285-abd7-aba49c4f668c" class="">Анализ</h3><p id="8207a74a-90ca-4441-97c3-85cd5fe10379" class=""><em>Здесь довольно много над чем поработать, но я бы хотел начать с общими показателей. </em></p><p id="86da8b2b-2c55-4894-afe3-c16d0eb49972" class="">Во-первых, давайте взглянем на волатильность Morpheus Labs, которая оказалась особенно высокой. Я рассчитал, что его 30-дневный показатель составляет -0,1095, что указывает мне на то, что в настоящее время он, скорее всего, не накапливается, по крайней мере, не по отношению к доллару, к которому привязана мера волатильности.
+
+Двигаясь дальше, давайте взглянем на две метрики, связанные с ликвидностью:
+Что касается ликвидности на стороне покупателя, я подсчитал, что <strong>поддержка </strong>покупки составила <strong>11,51 BTC в</strong> пределах 10% от текущих цен на перечисленных биржах, что составляет <strong>1,41% от его сетевой стоимости</strong> .
+Это впечатляет, учитывая ограниченный круг бирж, на которых он котируется.
+Что определенно указывает на наличие спроса в текущих ценах.
+
+Глядя на сторону продажи, я подсчитал, что в журналах заказов для покупки доступно
+7010855 MITX, что составляет 1,66% от оборотного предложения.
+Это самый низкий показатель среди предыдущих исследований, что указывает на то, что в сочетании с относительно высоким спросом, у держателей, похоже, мало стимулов к продаже в настоящее время.
+
+За последние 24 часа Morpheus Labs совершила обмен на 2 698 864$, что составляет 6,1% от его сетевой стоимости; впечатляющая цифра.
+К сожалению, скорее всего, это ложь, хотя и не по вине самого проекта.
+Похоже, что ~1,7 млн$ из этого объема поступает от бирж, печально известных своими промывками. Я лично проверил журналы заказов и убедился, что это действительно так.
+Таким образом, если очистим промывной объем, Morpheus Labs торговал 988140$ в течение последних 24 часов, приравнивая к более скромной, но респектабельным 2,23% своей сети.
+
+Что касается эмиссии предложения MITX, ее нет, как это обычно бывает с токенами ERC-20, которые были выпущены после ICO. 
+Таким образом, годовая инфляция составляет прекрасные 0%; отлично подходит для спекулянта. 
+По сути, это означает, что реальных препятствий для роста цен быть не должно. Более того, ожидается, что Morpheus Labs сожжет еще 23 млн MITX к октябрю 2022 года, сократив максимальное предложение до ~ 700 млн MITX.
+
+Давайте завершим этот раздел <strong>RIch-List.</strong>
+Просматривая список богатых пользователей Morpheus Labs, я обнаружил, что там <strong>111 770 держателей</strong>, что является 3-м по величине показателем, зафиксированным мной, и очень впечатляет для довольно небольшого проекта.
+Из них <strong>10 ведущих адресов контролируют 63,46% текущего оборотного предложения
+423 млн MITX; 20 лучших контролируют 69,37%; и 100 лучших контролируют 80,08%.</strong></p><p id="0d2da3b2-d861-47e1-9bf2-6161317625d3" class="">Что касается активности первых 20 адресов, 15 неактивны в течение последних 30 дней, из них 4 накапливаются и 1 распределяет.
+Чистые <strong>приток</strong> из <strong>4,760,644 MITX</strong> на эти адреса в течение этого периода.</p><h2 id="261fd4f9-2d2d-4351-9c17-dc5b0555867c" class="">Сообщество</h2><h3 id="5ea097d6-2457-4b3a-97b5-8daa3a804d54" class=""><strong>Социальные медиа</strong></h3><p id="26637575-5cd1-4669-8801-0d1f2a2d30e0" class="">Morpheus Labs присутствует на всех платформах, кроме Discord. Для начала давайте посмотрим на различные социальные показатели, которые я рассчитал на основе аккаунтов Morpheus Labs.</p><p id="a88377cf-c693-431e-a187-6f18adb0be96" class="">Подписчиков в<strong> </strong><em>Twitter</em>: <strong>18 337</strong></p><p id="f9b32142-8c08-48b7-b707-3edf84fe7e88" class=""><em>Твитов: </em><strong>1365</strong></p><p id="c48ffd0b-7d5b-474d-87d4-48e6d860dbe1" class=""><em>Среднее участие в Twitter</em>: <strong>0,86%</strong></p><p id="81bd2ad9-a6fe-4a81-ad7b-29a991816a09" class=""><em>Нравится на Facebook</em>: <strong>1678</strong></p><p id="504662ab-7b78-46ae-8ee6-9b6651cf4dc7" class=""><em>Публикаций в Facebook (30 дней)</em>: <strong>11</strong></p><p id="323b6c06-3aa8-49c0-acaf-4e2851f63a70" class=""><em>Среднее участие в Facebook</em>: <strong>0,23%</strong></p><p id="c711b4c8-0add-4981-96e9-94972e57af58" class=""><strong>Twitter:</strong></p><p id="ef08a027-cabb-4a6c-8e22-4754e04034cc" class="">У Morpheus Labs умеренно большая аудитория в Твиттере - 18 337 подписчиков (+5600 к ее аудитории в феврале 2020 года).
+Его вовлеченность довольно высока 0,86%. Это также в 19 раз больше, чем в среднем по всем отраслям (0,045%), и в 31,8 раз больше, чем в среднем в отрасли технологий и программного обеспечения (0,027%). 
+Что мне действительно понравилось, так это то, что команда явно привержена к регулярному размещению контента, причем обновления в целом публикуются каждые пару дней.</p><p id="22d369c4-d4d6-49e0-b8fd-3d02ad5b2723" class=""><strong>Facebook:</strong></p><p id="4fad8b23-e018-4560-b3bd-b1f6a1707e0c" class="">У Morpheus Labs небольшая аудитория Facebook - 1678 человек, всего на 33 лайка больше, чем было год назад, что довольно плохо и наводит на мысль о пренебрежении, по сравнению с Twitter.
+Уровень вовлеченности намного ниже - 0,23%, несмотря на значительно меньшую аудиторию, но я рад видеть, что команда стремится держать эту аудиторию в курсе событий с 11 сообщениями за последние 30 дней. 
+Что касается вовлеченности, то его показатель в 3 раза выше среднего показателя по всем отраслям (0,08%) и в 11,5 раза выше, чем в индустрии технологий и программного обеспечения (0,02%).</p><p id="685416c0-a752-4f92-8267-ea76723035e5" class=""><strong>Телеграм:</strong></p><p id="491e212d-d0ad-44a1-a2e8-4d2092b60443" class="">В группу Telegram Morpheus Labs входит 5221 участник. Ниже я привел основные выводы из прошлой недели активности в группе:</p><ul id="158d8104-c6b6-490e-996e-bae292107ab1" class="bulleted-list"><li style="list-style-type:disc">Группа, как правило, довольно активна, по крайней мере, некоторые обсуждения происходят ежедневно, хотя ни в коем случае не постоянно.</li></ul><ul id="eb982175-6fae-4b36-a206-232dbe34fb02" class="bulleted-list"><li style="list-style-type:disc">Те, кто общаются внутри группы, похоже, привержены проекту, а дискуссии сосредоточены на продвижении Morpheus Labs на социальных платформах и на том, как участники сообщества могут внести свой вклад.</li></ul><ul id="7ac0146d-f854-4bcb-9ae8-07e15ea7f090" class="bulleted-list"><li style="list-style-type:disc">Группа находится в курсе событий, ежедневно публикуются сообщения со ссылками на новые статьи, ресурсы и текущие события.</li></ul><ul id="d6dcf763-f574-4a07-90cc-3fbe40640e8e" class="bulleted-list"><li style="list-style-type:disc">Команда недавно запустила NFT Launch Pad с сопутствующим исходным кодом на платформе SEED Morpheus Labs.</li></ul><ul id="8a537a93-c9be-4c68-9f3f-bc084626ac24" class="bulleted-list"><li style="list-style-type:disc">Техническую дорожную карту на 2021 год можно найти здесь, но я подробно остановлюсь на ней в следующем разделе.</li></ul><ul id="eab05a39-619a-43f2-b651-c1ff1e94557b" class="bulleted-list"><li style="list-style-type:disc">Команда недавно стала партнером Huawei Cloud и NewsCrypto.</li></ul><ul id="a26f4662-ac87-4e14-98f2-7790f466885d" class="bulleted-list"><li style="list-style-type:disc">В целом, в сообществе существует определенная степень волнения по поводу будущего Morpheus Labs, но есть некоторые опасения, что маркетинг еще не работает в полном темпе.</li></ul><h2 id="60412203-c62c-446b-a2c9-33b580367ec2" class=""><strong>Разработка</strong></h2><p id="dbf69f5b-7859-4c93-8fff-c32962faecd1" class="">
+<em>Для следующего анализа развития, я буду оценивать руководство проекта, технический документ, дорожную карту, доступные кошельки и наконец, предоставлю общий обзор прогресса разработки.</em></p><p id="6040a53e-b007-4285-907d-769a85e26aaa" class=""><strong>Руководство проекта:</strong></p><p id="43b13cc8-d785-4e5a-afe7-74fc4fe9c6f5" class="">По данным LinkedIn, команда Morpheus Labs состоит из 15 сотрудников, 9 из которых указаны на веб-сайте.</p><ul id="cb331f5e-6ff8-41a0-b5b7-d51aeff8d17c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.linkedin.com/in/chuangpeihan/">Чуан Пей-хан, генеральный директор</a></li></ul><ul id="327b4041-6bbc-45ba-9943-5c1809c520a0" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.linkedin.com/in/dorinburcea?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3Bzfl1iV91TvWO7keWtVWxDg%3D%3D">Дорел Д. Бурси, ИТ-директор</a></li></ul><ul id="01395293-bf0d-42ce-828d-6fa8c8fba751" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.linkedin.com/in/bruce-lu-yang-%E9%B2%81%E6%B4%8B-09987880?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3Bzfl1iV91TvWO7keWtVWxDg%3D%3D">Брюс Лу Ян, технический директор</a></li></ul><ul id="85e8b1c8-cd75-4201-b426-49987801953d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.linkedin.com/in/sang-duong-van-87571830?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3Bzfl1iV91TvWO7keWtVWxDg%3D%3D">Санг Зыонг Ван, старший разработчик блокчейнов</a></li></ul><ul id="90107b3a-c203-478e-b272-637234d38461" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.linkedin.com/in/trung-trinh-95a4a51a6?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people_load_more%3BFOHU8ff5TRK1%2FAs7je%2Bk1A%3D%3D">Трин Тьен Чунг, старший разработчик блокчейнов</a></li></ul><ul id="bd913444-af15-47b6-b91a-228cb55c8043" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.linkedin.com/in/xstormrule?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people_load_more%3BFOHU8ff5TRK1%2FAs7je%2Bk1A%3D%3D">Бао Куок Ле, старший дизайнер</a></li></ul><ul id="685bb4f7-cbfb-4b75-b7ea-a781a3d2fd5d" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.linkedin.com/in/tri%E1%BA%BFt-nguy%E1%BB%85n-th%E1%BA%A9m-minh-87a844160?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3Bzfl1iV91TvWO7keWtVWxDg%3D%3D">Тристан Нгуен, разработчик блокчейнов</a></li></ul><ul id="ca9dc69e-d696-4528-8045-7a1666a7a972" class="bulleted-list"><li style="list-style-type:disc">Мин Нгуен, разработчик</li></ul><ul id="60647259-dff5-44c0-96f2-3075b468f748" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.linkedin.com/in/ntthang?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people_load_more%3BFOHU8ff5TRK1%2FAs7je%2Bk1A%3D%3D">Тханг Нгуен, старший разработчик</a></li></ul><ul id="6e7a7bff-ec08-4613-bcb3-381b1ab88131" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.linkedin.com/in/stellaleesg?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people_load_more%3BvdVZ9YlKRfWw3tU46PnohQ%3D%3D">Стелла Ли, продажи и маркетинг</a></li></ul><figure id="0c261a66-703d-44f0-a4cd-17f42db0384e" class="image"><a href="16%20Example%20a2077ef4ce424bfdb5213af99439c013/Untitled.png"><img style="width:636px" src="16%20Example%20a2077ef4ce424bfdb5213af99439c013/Untitled.png"/></a></figure><h3 id="4bdc9340-c5af-4989-a60f-e29a7d931e12" class="">Белая бумага:</h3><p id="f245e51d-15fe-4280-b0c7-9ac8dfddeb12" class=""><a href="https://morpheuslabs.io/whitepaper/ml2019.pdf">Белая бумага</a></p><p id="57dbced3-d08f-46df-aa95-c44a139d6fee" class=""><em>Поскольку технический документ остается неизменным с 2019 года, я скопировал свои записи, сделанные во время первоначального исследования проекта.
+Я проанализирую прогресс, достигнутый с тех пор, в следующем разделе.</em></p><p id="05dc66bf-4bb6-4dc4-9d4f-57a71eec1422" class="">
+</p><p id="90aa4c6f-e168-42e1-9cbc-fc9ca417d490" class="">В документе обсуждаются основные проблемы, с которыми сталкиваются предприятия, которые ищут решения на основе блокчейнов, такие как широкий выбор протоколов; что наиболее подходит?
+Компании также сталкиваются с трудностями при подборе вариантов использования и оценкой преимуществ, а также с чрезмерной стоимостью разработки на случай возможных сбоев.
+Благодаря использованию BPaaS Morpheus Labs эти затраты будут значительно сокращены, что позволит предприятиям внедрять инновации.</p><p id="f49e6006-8914-480d-86e6-d0feaada0a41" class="">
+</p><p id="5f4746e1-5a2e-40a0-8eab-2c610de877be" class="">Здесь для их клиентов предусмотрены <em>четыре основных принципа ценности</em>:</p><ul id="0939898b-3f32-4b17-9071-6a7fd8946ea1" class="bulleted-list"><li style="list-style-type:disc">Выбор протокола блокчейн; предприятия могут опробовать и протестировать различные технологии в одной среде.</li></ul><ul id="bac34fa8-7731-4670-ae20-4055d20929e5" class="bulleted-list"><li style="list-style-type:disc">Краудсорсинг; предприятия смогут запрашивать взносы из внешних источников.</li></ul><ul id="a0c6db1c-08c1-4240-9b72-5d8f70730102" class="bulleted-list"><li style="list-style-type:disc">Корпоративного уровня; платформа будет масштабируемой для всех организаций и полностью безопасной.</li></ul><ul id="5d61281b-2fd3-4ebc-b5c9-f06aef709792" class="bulleted-list"><li style="list-style-type:disc">Библиотека приложений; предприятия получат доступ к готовым развертыванию приложениям.</li></ul><p id="82cd8509-00de-4cee-bfa6-14f336a571c1" class="">
+</p><p id="6744ae20-96b8-41a6-9c2e-b5c1502e424e" class="">Двигаясь дальше, мы находим страницу с подробным описанием функций, поддерживаемых платформой, включая следующие:</p><ul id="89fc92fe-3ca9-4d49-8e08-bf193b1067b9" class="bulleted-list"><li style="list-style-type:disc">Несколько блокчейнов в одной среде.</li></ul><ul id="9f7d2035-f31e-4e9f-b2ee-5dfa79a2d47c" class="bulleted-list"><li style="list-style-type:disc">Функциональность команды для совместной работы.</li></ul><ul id="c3a457fb-681a-4e25-aa20-e3df2504684c" class="bulleted-list"><li style="list-style-type:disc">Локальные облачные центры обработки данных для надежных и масштабируемых облачных сред.</li></ul><ul id="c0fda534-1ddf-4f4f-9f20-3a39fc4c0cfb" class="bulleted-list"><li style="list-style-type:disc">Управление доступом пользователей для безопасного доступа к платформе.</li></ul><ul id="e53e934c-88bf-450f-9b50-6bc596866cc2" class="bulleted-list"><li style="list-style-type:disc">Интегрированная облачная среда разработки с полным набором инструментов.</li></ul><ul id="a9478c97-89cb-4223-b8e0-3a735210c9a0" class="bulleted-list"><li style="list-style-type:disc">Готова к развертыванию библиотеки приложений.</li></ul><ul id="29ac03ca-d559-43b3-9de0-d9ab3ec57247" class="bulleted-list"><li style="list-style-type:disc">Универсальное управление управления сетью; обеспечение программного обеспечения и промежуточного программного обеспечения; мобильные версии для мониторинга проектов на ходу; и применение оперативного интеллекта к сети.</li></ul><p id="402f1923-e3aa-4431-aaa3-101525e1020b" class="">
+</p><p id="488f82fc-ec7b-4eaf-af4f-48480620677a" class="">Здесь представлены скриншоты рабочей платформы с понятным интерфейсом. Нам также показывают библиотеку приложений, которая также разработана для простоты использования.
+Далее, есть раздел, посвященный размеру рынка, где мы обнаруживаем, что рынок блокчейнов, как ожидается, достигнет 3,1 трлн долларов к 2030 году, а Morpheus Labs рассчитывает захватить 30% от 690 млн долларов пригодных для эксплуатации и доступных условий к 2021 году. Это очень амбициозно.
+</p><p id="a443bb9f-20ad-4029-abef-6fe1d1ea4fef" class="">Теперь, обращаясь к  <em>бизнес-модели</em> , мы обнаруживаем, что Morpheus Labs имеет ряд источников дохода, основными тремя из которых являются плата за подписку на платформу, плату за библиотеку приложений и курс разработки.</p><p id="72003f07-a97d-4aef-9359-35faef762162" class="">Также есть отличная графика токеномики для Morpheus Infrastructure Token (MITX), которую я предоставил ниже:</p><p id="3b8b4026-b1ce-46a9-81dc-6547493ebf6b" class="">
+</p><figure id="2684437a-bf87-4b36-990d-d96b522d7c6d" class="image"><a href="16%20Example%20a2077ef4ce424bfdb5213af99439c013/Untitled%201.png"><img style="width:1049px" src="16%20Example%20a2077ef4ce424bfdb5213af99439c013/Untitled%201.png"/></a></figure><p id="e1a9a672-69d8-4da4-ad90-9d4a5030c3e7" class="">Вся платформа будет работать исключительно на MITX, и вместо того, чтобы заставлять клиентов покупать токен для использования платформы (это сдерживало бы использование), вместо этого Morpheus Labs будет покупать MITX непосредственно из оборотных средств, используя фиатные платежи на своей платформе.
+
+Партнеры будут иметь важное значение в этом процессе, они могут быть: 
+<strong>поставщиками ликвидности, брокерскими фирмами, внебиржевыми отделениями или крупными инвесторами в MITX,</strong> поскольку они будут покупать на рынке, чтобы предоставлять токены клиентам.
+
+Что касается подписки на платформу, клиенты могут выбрать оплату фиатными или MITX-токенами, если они уже владеют ими, причем последние, как ожидается, будут меньшинство. Для тех, кто совершает покупку в фиате, комиссия будет привязана к обменному курсу MITX, после чего Morpheus Labs купит эквивалент у партнера.
+
+Переходя к партнерам по протоколу блокчейн, мы обнаруживаем, что протоколы, с которыми сотрудничает Morpheus Labs, обеспечат инфраструктуру, которая позволит им работать с предприятиями. Протоколы будут платить листинговый сбор, который оплачивается только на MITX.
+
+Наконец, будет Совет по продукту, который будет состоять из членов сообщества, которые помогают в разработке Morpheus Labs, тестировании новых функций и предоставлении отзывов, при этом от них требуется хранить токены для обеспечения членства.
+
+Двигаясь дальше, мы находим подробный обзор<strong> Proof of Alliance</strong>, механизма, используемого Morpheus Labs для «эффективного регулирования скорости токенов на платформе и всех вовлеченных заинтересованных сторон».</p><p id="6c4b4899-de86-4c9d-82f5-3f42bf0cb9f7" class="">Есть три основных столпа PoA, которые представляют собой механизмы ставок:</p><ul id="df4d181a-8d2c-4fcf-942e-5a4026dc690d" class="bulleted-list"><li style="list-style-type:disc"><em>Механизм </em>стекинга <em>для разработчиков</em>: разработчики Dapp делают ставки MITX для повышения видимости приложений в библиотеке приложений, позволяя разработчикам размещать приложения в верхней части результатов поиска, что обеспечивается с помощью многоуровневой модели ставок, при этом минимальная ставка MITX составляет 100 долларов в месяц. </li></ul><ul id="92ccf469-d7ab-47af-b6ad-4cc90a4ca12f" class="bulleted-list"><li style="list-style-type:disc"><em>Механизм ставок для </em>скидок на основе подписки: пользователи самой платформы будут иметь право на скидки с их абонентской платы, опять же с использованием многоуровневого подхода, при котором минимум 10% от общей стоимости подписки ставится на 15% скидку и максимум 20% на скидку 25%.</li></ul><ul id="125181f7-7e01-471f-984c-31af872c5bf7" class="bulleted-list"><li style="list-style-type:disc"><em>Дистрибьюторы механизма стекинга, </em>они должны будут заблокировать сумму MITX, которая соответствует размеру и сроку соглашения, с тремя доступными уровнями. Дистрибьюторам необходимо связаться с Morpheus Labs для получения подробной информации о суммах.</li></ul><h3 id="1bcdd0af-7b36-407a-a6db-64ea06a93fae" class="">Дорожная карта:</h3><p id="83de71e8-5443-4580-ad29-f423b30c1ce8" class=""><a href="https://medium.com/morpheus-labs/morpheus-labs-marketing-initiatives-roadmap-2021-ae46cc35756">Дорожная карта</a></p><p id="fada5076-2ade-4619-9c5f-67e64c441139" class="">Дорожная карта представлена в виде подробного сообщения в блоге, в котором излагаются основные цели Morpheus Labs на 2021 год с выделением трех основных целей:</p><ul id="a9e7a4d7-871c-44df-9a8e-54cd3b0315f8" class="bulleted-list"><li style="list-style-type:disc">Продолжение инициативы по увеличению числа пользователей SEED 2.0, которая началась в сентябре 2020 года.</li></ul><ul id="6500bb00-ac8d-4cf6-9341-40bbe86ec69d" class="bulleted-list"><li style="list-style-type:disc">Усиление основных продуктов.</li></ul><ul id="fbd90190-48c1-4804-b607-f8a2fafbba4b" class="bulleted-list"><li style="list-style-type:disc">Обеспечение взаимовыгодного партнерства для экосистемы.</li></ul><p id="e3b3c6ef-12f9-4d1d-a152-ee92a3f5d041" class="">Помимо этого, в сообщениях блога подробно описывается массовая маркетинговая кампания, которая будет запущена командой, которая будет включать рекламу продуктов и услуг в основных криптографических СМИ и соответствующих традиционных СМИ, а также на наиболее посещаемых криптосайтах, таких как CoinMarketCap и Etherscan. 
+Также будут регулярные AMA и обычные обзоры от влиятельных лиц YouTube, и команда будет инвестировать в Google Adwords и SEO-кампании.
+
+Первый квартал был посвящен миграции S<strong>EED в облако Huawei и запуску NFT Launchpad</strong> на платформе SEED с последующим выпуском ставок по подписке.
+Во втором квартале, наряду с созданием инструмента подкачки без использования газа и выпуском внешней библиотеки приложений и <strong>библиотеки API. </strong>
+Двигаясь к третьему кварталу, команда будет сосредоточена на <strong>интеграции с Polkadot</strong> и <strong>совместном создании dApp, которое применяет как NFT, так и DeFi.
+</strong>Наконец, в четвертом квартале команда будет совместно создавать 3 dApps на основе Polkadot/Substract, которые используют MITX в качестве служебной программы или токена управления, а также сосредоточится на реализации Integration Studio в SEED.</p><p id="ba978d45-ad8c-4246-9bad-7c0d8b2e90ad" class=""><strong>Кошельки:</strong></p><p id="21f16200-32b8-444b-8ade-983494136c6c" class="">MITX - может храниться на аппаратных кошельках, таких как Ledger и Trezor, в качестве токена ERC-20, а также на мобильных кошельках, веб-кошельках.</p><h3 id="0e2afff6-ff94-4171-91d4-1ff48207d40e" class="">Прогресс в развитии:</h3><p id="05d3e8e3-afbe-4ee3-af36-0b7057148864" class=""><em>Ниже я привел ключевые выводы из обновлений разработки, опубликованных командой за последний год, чтобы лучше определить прогресс, достигнутый с начала 2020 года. Источники всех этих событий и фактов также приведены ниже.</em></p><ul id="eaf0b1ae-f194-451f-9a5e-6cd0ec514c20" class="bulleted-list"><li style="list-style-type:disc">Что касается партнерских отношений, в 2020 году Morpheus Labs сотрудничает с Natsoft, Conflux, Redblock, Sota Tek, Unstoppable Domains, Nervos, NULS, Shufti Pro и ICON.</li></ul><ul id="66935fc8-8de8-4dfc-8ae2-004d1b87a812" class="bulleted-list"><li style="list-style-type:disc">Компания Morpheus Labs была приглашена для участия в прямой трансляции Fintech Global, которую ведет институт исследований финансовых технологий университета Цинхуа.</li></ul><ul id="b981799e-ed14-4e28-93d7-eafa2d3d0f82" class="bulleted-list"><li style="list-style-type:disc">Команда была представлена в ландшафте блокчейнов IMDA, который способствует повышению осведомленности и внедрению блокчейнов в Сингапуре.</li></ul><ul id="cdd33626-f98d-4207-a449-e2f8d9b92e25" class="bulleted-list"><li style="list-style-type:disc">Morpheus Labs вошла в топ-15 стартапов в Huawei Spark Accelerator.</li></ul><ul id="f6d44dad-20bb-44e0-a878-17d1a025ac67" class="bulleted-list"><li style="list-style-type:disc">PricewaterhouseCoopers Singapore привлекла Morpheus Labs к разработке Smart Compliance.</li></ul><ul id="5a7220da-a718-4dd4-a372-4f0204424ca9" class="bulleted-list"><li style="list-style-type:disc">Команда вошла в топ-25 в мира, по программе оценки инвестиций Startup-O и в топ-100 по Slingshot.</li></ul><ul id="0daca0b3-330f-4d6a-bf59-6d19a588f185" class="bulleted-list"><li style="list-style-type:disc">Morpheus Labs развернула веб-приложение для выпуска NFT под названием Bluesky.</li></ul><ul id="a293162c-b48b-45c5-99d5-656c56393a28" class="bulleted-list"><li style="list-style-type:disc">Morpheus Labs SEED был запущен в июле 2020 года с более чем 2000 активных пользователей.</li></ul><ul id="2d93f4a6-5eab-4534-936d-5531505423ca" class="bulleted-list"><li style="list-style-type:disc">Команда объединилась с Huawei Cloud, чтобы стимулировать внедрение блокчейнов, запустив в сотрудничестве коллекцию NFT.</li></ul><ul id="bd50a31f-e31d-4f12-a17a-e03ec74840df" class="bulleted-list"><li style="list-style-type:disc">Morpheus Labs стала партнером 0Chain, чтобы облегчить внедрение блокчейна на предприятиях, при этом 0Chain предлагает децентрализованную сеть хранения корпоративного уровня.</li></ul><p id="d1720771-4a9d-4670-b743-8337605991e7" class=""><a href="https://medium.com/morpheus-labs/morpheus-labs-token-update-treasury-edition-d2ccd8c010c9">Сообщение в блоге №1</a></p><p id="3c3a3f86-62e4-47ab-930d-c2651cdae636" class=""><a href="https://medium.com/morpheus-labs/morpheus-labs-community-ama-2-7b08b0865b2d">Сообщение в блоге №2</a></p><p id="8093c6b8-b42d-481c-8553-4bc14c8547e0" class=""><a href="https://medium.com/morpheus-labs/round-3-april-2021-token-burn-update-morpheus-labs-c093eab3edc5">Сообщение в блоге №3</a></p><p id="b745829a-0354-4f0b-9a9d-1cebeda33f47" class=""><a href="https://medium.com/morpheus-labs/morpheus-labs-and-0chain-announce-strategic-partnership-to-facilitate-blockchain-adoption-in-the-acbf039e8a92">Сообщение в блоге №4</a></p><p id="1a7b6714-744c-4a59-92c4-0233a6672cda" class=""><a href="https://medium.com/morpheus-labs/the-first-nft-collection-by-morpheus-labs-f288e548827d">Сообщение в блоге №5</a></p><p id="2dda74b3-579b-4ea6-8147-c7ee91d0ae4b" class=""><a href="https://medium.com/morpheus-labs/huawei-cloud-x-morpheus-labs-6c097bec974">Сообщение в блоге №6</a></p><p id="72893769-d02d-421b-bf25-46b48ae593f8" class=""><a href="https://medium.com/morpheus-labs/token-movement-update-february-2021-3189976ab8a">Сообщение в блоге № 7</a></p><p id="86bd7dfd-6eb1-4e5b-a55c-7b6c83f1152f" class=""><a href="https://medium.com/morpheus-labs/annual-review-of-morpheus-labs-2020-year-end-roundup-ccb1d49f4538">Сообщение в блоге № 8</a></p><p id="911759f3-033a-43c8-8979-f7a662e7dfa8" class=""><strong>На этом я завершаю фундаментальную оценку Morpheus Labs.</strong></p><h2 id="09fb96d2-b911-4fb9-851a-2ef903a99bfa" class=""><strong>Технический анализ</strong></h2><p id="b84c3ee5-94cb-47b7-aa2d-bc390954a310" class=""><strong>MITX/BTC</strong></p><p id="879bca45-7282-46d8-8e92-9c9af34a8363" class=""><a href="https://charts.cointrader.pro/snapshot/6sGIK">https://charts.cointrader.pro/snapshot/6sGIK</a></p><p id="d2681b1c-8ec8-4cc2-b329-9897a6d4a149" class=""><strong>MITX/USD</strong></p><p id="97a3b269-d2b2-461a-96de-4ea6822d9232" class=""><a href="https://charts.cointrader.pro/snapshot/Xb7aI">https://charts.cointrader.pro/snapshot/Xb7aI</a></p><p id="451cfa5c-4937-4bca-b2c8-28157e6a9aad" class="">
+В настоящее время пара снова ушла в область восстановленной поддержки на уровне 140 сатоши, выше которого она держится. 
+Это похоже на идеальную область для входа в новую позицию, поскольку признание недействительности очевидно; недельное закрытие ниже 143 предполагает, что MITX необходимо повторно протестировать минимум своего диапазона на 53, чтобы обеспечить точку выхода.
+
+Что касается MITX/USD, то здесь диаграмма совершенно другая: двухлетний период с июля 2018 года по июль 2020 года в ретроспективе кажется огромным диапазоном накопления между историческим минимумом на уровне 0,002 доллара и сопротивлением диапазона на уровне 0,033 доллара. 
+Несмотря на размер этого диапазона, как по продолжительности, так и по глубине цены, в этом нет ничего нового, поскольку большая часть ценового движения альткойнов в 2015-2017гг. оказалась накоплением для бычьего цикла 2017/18г. </p><p id="24cb2a24-398b-46bc-a036-3429dae0ab11" class="">Хотя вполне возможно, что цикл для MITX/USD закончился, пара BTC выглядит так, как она выглядит, а BTC еще не выглядит так, как будто это макро-вершина, более вероятно, что мы увидим здесь некоторую консолидацию для пары, за которым последует еще один рост в сторону этой области в 0,24 доллара.
+Это будет признано недействительным, если, на мой взгляд, будет потеряно 0,07 доллара, и в этот момент пара, вероятно, вернется к 0,03 доллара.
+</p><p id="75d0108f-a1ef-43fb-bc51-8951bc6c918a" class=""><strong>На этом я завершаю оценку Morpheus Labs.</strong></p><h2 id="8bfea90c-78c1-4989-ba71-fe1fc27e0c7b" class=""><strong>Заключение</strong></h2><p id="d87dba79-dcab-441d-beee-c4df91152ff1" class="">В этом отчете сейчас более 4000 слов, и пора подвести его к завершению.</p><p id="82a09553-9109-42bb-ae00-ba4142319fad" class=""><strong>Моя последняя оценка за Morpheus Labs - 8 из 10</strong>.</p></div></article></body></html>
