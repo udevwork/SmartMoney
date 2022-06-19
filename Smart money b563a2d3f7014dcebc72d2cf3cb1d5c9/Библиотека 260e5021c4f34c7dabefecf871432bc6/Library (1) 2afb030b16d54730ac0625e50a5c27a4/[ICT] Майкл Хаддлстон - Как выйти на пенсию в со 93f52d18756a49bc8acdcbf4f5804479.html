@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[ICT] Майкл Хаддлстон - Как выйти на пенсию в сорок</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="93f52d18-756a-49bc-8acd-cbf4f5804479" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="%5BICT%5D%20%D0%9C%D0%B0%D0%B8%CC%86%D0%BA%D0%BB%20%D0%A5%D0%B0%D0%B4%D0%B4%D0%BB%D1%81%D1%82%D0%BE%D0%BD%20-%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%D0%B8%CC%86%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BF%D0%B5%D0%BD%D1%81%D0%B8%D1%8E%20%D0%B2%20%D1%81%D0%BE%2093f52d18756a49bc8acdcbf4f5804479/ICT.jpg"/></div><h1 class="page-title">[ICT] Майкл Хаддлстон - <strong>Как выйти на пенсию в сорок</strong></h1><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th><td><span class="selected-value select-value-color-yellow">Lifestyle</span></td></tr><tr class="property-row property-row-file"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesFile"><path d="M5.94578,14 C4.62416,14 3.38248,13.4963 2.44892,12.585 C1.514641,11.6736 1,10.4639 1,9.17405 C1.00086108,7.88562 1.514641,6.67434 2.44892,5.76378 L7.45612,0.985988 C8.80142,-0.327216 11.1777,-0.332396 12.5354,0.992848 C13.9369,2.36163 13.9369,4.58722 12.5354,5.95418 L8.03046,10.2414 C7.16278,11.0877 5.73682,11.0894 4.86024,10.2345 C3.98394,9.37789 3.98394,7.98769 4.86024,7.1327 L6.60422,5.4317 L7.87576,6.67196 L6.13177,8.37297 C6.01668,8.48539 6.00003,8.61545 6.00003,8.68335 C6.00003,8.75083 6.01668,8.88103 6.13177,8.99429 C6.36197,9.21689 6.53749,9.21689 6.76768,8.99429 L11.2707,4.70622 C11.9645,4.03016 11.9645,2.91757 11.2638,2.23311 C10.5843,1.57007 9.40045,1.57007 8.72077,2.23311 L3.71342,7.0109 C3.12602,7.58406 2.79837,8.35435 2.79837,9.17405 C2.79837,9.99459 3.12602,10.7654 3.72045,11.3446 C4.90947,12.5062 6.98195,12.5062 8.17096,11.3446 L10.41911,9.15165 L11.6906,10.3919 L9.4425,12.585 C8.50808,13.4963 7.2664,14 5.94578,14 Z"></path></svg></span>Files &amp; media</th><td><span style="margin-right:6px"><a href="https://tlap.com/forum/topic/21038-maykl-haddlston/?tab=comments#comment-450673">Оригинальная статья</a></span></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Comments</th><td>Текст внутри + По ссылке</td></tr></tbody></table></header><div class="page-body"><p id="5904b6f7-5bbd-402e-82aa-012cd8698a46" class="">
+</p><figure id="e18d4771-4fb6-461e-9be3-0b776ffc839a" class="image"><a href="%5BICT%5D%20%D0%9C%D0%B0%D0%B8%CC%86%D0%BA%D0%BB%20%D0%A5%D0%B0%D0%B4%D0%B4%D0%BB%D1%81%D1%82%D0%BE%D0%BD%20-%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%D0%B8%CC%86%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BF%D0%B5%D0%BD%D1%81%D0%B8%D1%8E%20%D0%B2%20%D1%81%D0%BE%2093f52d18756a49bc8acdcbf4f5804479/inner.md.jpg"><img style="width:500px" src="%5BICT%5D%20%D0%9C%D0%B0%D0%B8%CC%86%D0%BA%D0%BB%20%D0%A5%D0%B0%D0%B4%D0%B4%D0%BB%D1%81%D1%82%D0%BE%D0%BD%20-%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%D0%B8%CC%86%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BF%D0%B5%D0%BD%D1%81%D0%B8%D1%8E%20%D0%B2%20%D1%81%D0%BE%2093f52d18756a49bc8acdcbf4f5804479/inner.md.jpg"/></a></figure><p id="6f2336ee-6da7-49e2-bd2e-fcc8c77e2006" class=""><strong>Как выйти на пенсию в сорок — Майкл Хаддлстон, Inner Circle Trader</strong></p><p id="d6c6e61e-dad0-46bc-85e8-402dc209943c" class=""><em>Майкл Хаддлстон, также известный как Inner Circle Trader – популярный </em><a href="http://tlap.com/5-etapov-stanovleniya-treydera/"><em>форекс-трейдер</em></a><em>, бывший наставник VP (</em><a href="https://tlap.com/forum/tags/no%20nonsense%20forex/"><em>No Nonsense Forex</em></a><em>) и сторонник «теории заговора», согласно которой свободные рынки не являются свободными, а все цены на валюты контролируются центробанками. В данном интервью он расскажет свою историю </em><a href="http://tlap.com/treyding-ozhidaniya-i-realnost/"><em>трейдинга</em></a><em>, поделится своим сетапом, позволяющим при должных условиях брать недельное движение, и даст несколько неожиданно хороших советов по </em><a href="https://tlap.com/forum/v-pomosch-treyderu/4/tom-dante-%E2%80%93-vebinar-po-psihologii-treydinga/19005/"><em>психологии трейдинга</em></a><em>. Интересного чтения!</em></p><p id="53cf1972-2d1a-4b26-88df-4e17c3583438" class=""><em>Ссылки: </em><a href="https://youtu.be/lKP6870YI18"><em>YouTube</em></a><em>, </em><a href="https://tradingnut.com/michael-inner-circle-trader-ict/"><em>сайт подкаста</em></a></p><ul id="a5fd8d97-df51-4ad6-aa43-f4543d9cf630" class="bulleted-list"><li style="list-style-type:disc">**</li></ul><p id="d27a6181-183f-412a-9408-587a770f99ec" class="">— Итак, народ, сегодня у нас в гостях Майкл ICT! Даже не помню, когда я впервые услышал об Inner Circle Trader’е… Многие годы назад! Так что я очень рад поприветствовать вас у себя на шоу, Майкл! Добро пожаловать на подкаст!</p><p id="922b012c-33a0-4066-aecd-34c6316799cf" class="">— Спасибо, что пригласили, сэр.</p><p id="7fdb7930-f4b0-40f0-8d53-7ac3dfb7f878" class="">— Майкл, сначала я хотел бы обсудить вашу историю! А еще у нас есть несколько <a href="http://tlap.com/otvetyi-na-voprosyi-treyderov/">вопросов</a> от слушателей... И, конечно, нужно поговорить с вами о вашем подходе к рынкам! Насколько я знаю, вы торгуете преимущественно рынок <a href="http://tlap.com/kak-ustroen-ryinok-forex/">форекс</a>. Итак, не могли бы вы для начала рассказать нам о том, как вы попали в трейдинг? И пару слов о себе, если можно!</p><p id="61b1fd72-ce40-4dea-900d-de452ecb268a" class="">— Окей. Пятого ноября 1992 года я получил по почте <a href="http://tlap.com/rekomenduemaya-literatura/">книгу</a> по трейдингу, потому что незадолго до этого подписался на рассылку «Realmoney – real people», на объявление о которой наткнулся в одном журнале. Это была книга Кевина Робертса! В восьмидесятые-девяностые годы его работы были очень популярны среди тех, кто интересовался торговлей на товарных рынках. С этого и начался мой трейдинг! Я прочитал всего одну книгу, решил, что нашел ответы на все <a href="http://tlap.com/otveti-na-voprosyi-treyderov-2/">вопросы</a>, и отправился торговать товарный рынок. Позже я переключился на облигации и индекс S&amp;P 500, а с них – на валютные фьючерсы… А потом открыл для себя рынок спот-форекса. И решил перейти на него, так как обнаружил, что <a href="http://tlap.com/chto-takoe-likvidnost-na-foreks/">ликвидность</a> там гораздо лучше, чем на валютных фьючерсах. С 2006 года только на нем и торгую!</p><p id="a83c7694-7bb6-48b4-adf2-1417495be851" class="">— Это интересно! Я знаю не так уж много <a href="http://tlap.com/skolko-zarabatyvat-forex/">трейдеров</a>, которые перешли с фьючерсов на <a href="http://tlap.com/pravda-o-rabote-na-foreks/">форекс</a>. Вот с акций на <a href="http://tlap.com/kak-perestat-slivat-na-forex/">форекс</a> – да! Но фьючерсный рынок почему-то мало кто покидает. Любопытно, что у вас все сложилось именно так! Возвращаясь к вашей истории… Чем вы занимались параллельно с трейдингом? Вы ведь не были профессиональным товарным <a href="http://tlap.com/test-dlya-treidera/">трейдером</a>, я полагаю? Кем вы работали? Какое образование получили?</p><p id="270d0530-2643-43b4-90d5-3786e76a617c" class="">— Я – человек весьма скромного происхождения! В моей <a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-ne-pozvolyayte-seme-vas-slomit/13756/">семье</a> ни у кого не было опыта спекуляций и торговли на товарном рынке, за исключением дяди, которому в 1983 году удалось немного подзаработать на рынке сахара. Впрочем, этим его опыт прибыльной торговли и ограничивался! Уверен, все наши слушатели хорошо понимают, что если тебя укусила муха трейдинга, то обратной дороги для тебя уже нет. Так что мой дядя и по сей день иногда торгует! Ему, правда, так и не удалось достичь стабильности…</p><p id="908276c3-5584-4d0c-ade2-f4aeeb4e61c2" class="">Когда я учился в старшей школе, он сказал мне, что самые богатые в мире люди торгуют фьючерсами и опционами. Он посоветовал мне найти хорошую работу, связанную с техникой, и инвестировать свой заработок во фьючерсы и опционы. Не могу сказать, что меня все это заинтересовало, ведь мне было всего шестнадцать! Я тогда увлекался боевыми искусствами. Но все же вскоре мне пришлось вступить во взрослую жизнь и начать работать. Я стал механиком, обслуживающим торговые автоматы. Заправлял их газировкой и сладостями, следил за исправностью механизмов… Я быстро это возненавидел! Приходилось работать по 13 часов в день, а денег при этом платили немного. Я чувствовал, что для меня где-то есть более подходящее дело…</p><p id="500749ba-af73-46d7-a6c8-f34937c953ae" class="">Как-то раз я взял почитать у своего работодателя журнал про предпринимательство. Там я и наткнулся на то объявление с рекламой книги, ну, или курса Кена Робертса, который распространялся по почтовой подписке. Как будто сама судьба меня к этому подтолкнула! Этим я в итоге и занялся.</p><p id="80015cf9-296e-4fb9-9fcf-8e5ee7355560" class="">— Не довелось ли вам потом встретиться с Кеном Робертсом лично?</p><p id="154abe67-4c10-4a89-ab36-f12a4b52a443" class="">— Нет, на самом деле я никогда не встречался ни с какими преподавателями или знаменитыми трейдерами. Мне довелось пообщаться с биржевыми <a href="http://tlap.com/test-kakoy-iz-tebya-treyder/">трейдерами</a> и «<a href="http://tlap.com/marketmeykeryi-na-foreks/">маркетмейкерами</a>» (в кавычках), но люди этой категории обычно не занимаются преподаванием, так что к ним нельзя просто подойти и попросить об <a href="http://tlap.com/obuchenie/">обучении</a>. Мне в свое время удалось познакомиться с ними только благодаря тому, что в девяностых я много времени проводил в America Online... Как раз тогда у меня в трейдинге случился удачный период длиной в девять месяцев. С него все и началось! Правда, по самой первой своей <a href="http://tlap.com/prekratite-iskat-sdelki-na-grafike/">сделке</a> я получил крупный <a href="http://tlap.com/uchimsya-proigryivat-pravilno/">убыток</a>, мы можем обсудить ее чуть позже… После этого я начал собирать информацию, заполняя пробелы в курсе Кена Робертса. В котором, надо сказать, приводился весьма недальнозоркий взгляд на то, как устроены рынки, и как мы, <a href="http://tlap.com/10-veshhey-kotoryih-boyatsya/">трейдеры</a>, должны с ними взаимодействовать. Там не обсуждалась тема <a href="http://tlap.com/risk-kalkulyator/">рисков</a>, вообще ничего такого… Советовали просто войти в рынок, а потом наращивать <a href="http://tlap.com/soprovozhdeniye-poziczij-forex/">позицию</a>, используя пирамидинг! Я тогда мечтал поскорее уволиться со своей работы, так что попытался заработать максимально много и максимально быстро. И просчитался! В этом плане я не стал исключением из правила. Начал торговать – и сразу же обжегся.</p><p id="c32f0db2-6cb4-4c93-8ac3-45b74b45368b" class="">— Вы сказали, что сначала занимались товарным рынком, потом S&amp;P 500 и облигациями, потом валютными фьючерсами… На каком рынке вы торговали, когда у вас случился этот удачный период длиной в девять месяцев?</p><p id="2f9fdb9b-211b-4f17-9f84-c70895de0a85" class="">— Ну… Моя первая <a href="http://tlap.com/sdelki-i-vyihodnyie/">сделка</a> была на рынке опционов. На самом деле это была худшая <a href="http://tlap.com/pishem-kopirovshhik-sdelok-mt4/">сделка</a> за всю мою <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-kak-nachat-kareru-treydera-pravilno/9530/">карьеру</a>! Потому что я начал торговать на реальные деньги, хотя еще не был к этому готов. Это был опцион на фьючерсный контракт на апельсиновый сок. Может, некоторые из наших слушателей даже не знают, что апельсиновый сок можно торговать <em>(смеется)</em>. Это очень тонкий рынок. Я открыл <a href="http://tlap.com/kopirovshhik-sdelok-fx-blue/">сделку</a>, и на следующий же день опцион лишился 50% своей стоимости. Так что рынок моментально посвятил меня в то, как быстро на нем можно потерять деньги! После этого я какой-то период не возвращался к торговле…</p><p id="ecc5ab79-bcc2-41f0-854d-24a6682e04f2" class="">Некоторое время спустя <a href="https://tlap.com/forum/v-pomosch-treyderu/4/larri-vilyams/19358/">Ларри Вильямс</a> (уверен, вы с ним знакомы), должно быть, купил у Кена Робертса список его подписчиков, потому что я получил от него письмо с предложением взглянуть на его работы. И я взглянул! Купил курс, кажется, он назывался «Конфиденциальный курс по трейдингу для фьючерсных миллионеров»… Я получил по почте четыре видеокассеты, в которых рассказывалось, как нужно торговать товарный рынок. И я в этот курс просто влюбился! Пересматривал его раз за разом... До сих пор наизусть помню все реплики диктора. Я почувствовал, что это мое! До этого я не понимал, что делаю, но теперь кое-что стало проясняться.</p><p id="3c08be5c-6abc-48e1-bedf-7fd15e7087cf" class="">Применяя то, чему я научился из этого курса, я целых девять месяцев торговал в <a href="http://tlap.com/uvelichit-pribyil-so-sdelki/">прибыль</a>… Это была чистейшая <a href="http://tlap.com/udacha-i-ee-rol-v-treydinge/">удача</a>! Сейчас это уже кажется мне совершенно очевидным. Девять месяцев стабильного дохода! Я открывал только длинные позиции, никаких коротких. И никогда больше не торговал опционы. Только <a href="http://tlap.com/sekretyi-stohastika/">стохастик</a> на часовом <a href="http://tlap.com/onlayn-grafiki-forex/">графике</a> плюс <a href="http://tlap.com/skolzyashhie-srednie/">скользящая средняя</a> с периодом 50 дней. Она росла, на часовых графиках появлялась перепроданность, формировалась бычья <a href="http://tlap.com/divergentsiya-na-foreks/">дивергенция</a> – и я покупал!</p><p id="8984618f-8faf-4496-9806-51c2504f058b" class="">В девяностых все рынки были раздуты! Так что торговать покупки было просто, ведь все активы росли. Я по своей глупости приписывал великолепные результаты моим новообретенным навыкам. Но девять месяцев спустя мне пришлось узнать, что рынки бывают не только бычьими… Мне нужно было срочно учиться играть на понижение, но вместо этого я только покупал и покупал, а рынок все падал… Я злился, открывал <a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-9-sposobov-umenshit-strah-i-nereshitelnost-pri-otkrytii-sdelok/13973/">сделку</a> с более крупными рисками… Никаких <a href="http://tlap.com/vashi-stopyi-kormyat-scheta/">стоп-лоссов</a>! В общем, вел себя как классический <a href="http://tlap.com/foreks-dlya-nachinayushhih/">трейдер-новичок</a>. В итоге это привело к сливу <a href="http://tlap.com/kak-nikogda-ne-slit-depozit/">депозита</a>. Хотя этому предшествовали целых девять месяцев просто необычайной удачи… Но иногда такое бывает! Мы, <a href="http://tlap.com/vyi-dolzhnyi-myislit-inache/">трейдеры</a>, легко убеждаем себя в том, будто знаем, что делаем. Особенно <a href="http://tlap.com/category/novichkam/">новички</a>! Мне тоже пришлось пройти через этот опыт.</p><p id="211b9c20-d351-4a45-8628-2c334e4bf72f" class="">Позже я решил уйти с рынка зерновых и скота, потому что заметил, что долговые инструменты, облигации и биржевые индексы гораздо более контролируемы в финансовом плане. Там было намного меньше неожиданных взлетов и падений! На них не оказывали влияние засухи и данные по урожаям… В общем, поведение финансовых рынков было гораздо более стабильно. Кроме того, я заметил, что там появляется гораздо больше <a href="http://tlap.com/vse-taynyi-patternov-price-action/">паттернов</a>! Из-за этого я и перешел от рынков зерновых и скота к финансовым деривативам.</p><p id="d7acf695-0e4f-4449-9867-385d172982f9" class="">— Вы упомянули паттерны… Вы торговали по индикаторному методу <a href="http://tlap.com/tdw-i-tdm/">Ларри Вильямса</a>?</p><p id="91b8fa0b-b16f-4a3d-8be1-4b1c2cb4d0c3" class="">— Ну, тогда – да! Я торговал, используя то, что было описано в его книге «How I Made One Million Dollars Last Year Trading Commodities». Ее до сих пор можно найти в продаже! Я купил себе копию в прошлом году. По-моему, эту книгу можно смело назвать краеугольным камнем прибыльной торговли! Несмотря на то, что она была написана еще в семидесятых годах, в ней приведена масса информации, которая актуальна и по сей день. <a href="https://tlap.com/forum/v-pomosch-treyderu/4/kak-myslit-kak-professionalnyy-treyder-chast-15/19993/">Трейдер</a>-новичок вполне может взглянуть на нее и сказать «а, на сегодняшних рынках это уже не работает». Но нет, работает! Действительно работает. По сути, весь мой <a href="http://tlap.com/kak-sostavit-torgovyiy-plan/">торговый план</a> целиком основывался на этой книге. И мне очень везло целых девять месяцев. Но я не понимал концепта игры на понижение и боялся его. Поэтому я пытался навязать рынку свои покупки, хотя для них тогда просто не было возможностей.</p><p id="0d389bb5-6f3d-48fe-aece-2f7c7fbebd9f" class="">— Забавная история: <a href="https://tlap.com/forum/torgovye-sistemy/2/d1-baza-05-larri-vilyamsa/8396/">Ларри Вильямс</a> был у меня на подкасте пару лет назад, и я просто испортил интервью <em>(смеются)</em>… Я мог бы задать ему столько интересных <a href="http://tlap.com/otvety-na-voprosy-trejderov-1/">вопросов</a>! Но интервью получилось скучным. Я не смог воспользоваться возможностью… Ну да ладно! Можете рассказать нам о том, как вы перешли от методов Ларри Вильямса к вашему сегодняшнему подходу? Как выглядело ваше развитие?</p><p id="c8fdb8c4-5890-4bc8-8da3-86a7c3461a23" class="">— Я начал применять принципы <a href="http://tlap.com/trendovyie-torgovyie-sistemyi/">трендовой</a> торговли и биржевые концепты Уильяма О’Нила. И делился своими результатами в сети! В те времена был очень популярен сервис America Online. Там были форумы и все такое… Я выкладывал туда свои идеи! И винрейт у них был 90%! Просто невероятно! Многие начали на меня подписываться и следовать моим торговым рекомендациям.</p><p id="626ab078-b425-471c-87c3-9c325d99a162" class="">Но, видимо, федеральное правительство тоже сидело на этих форумах <em>(смеется)</em>. А я не приписывал к своим постам никаких предупреждений о <a href="http://tlap.com/osnovyi-risk-menedzhmenta/">рисках</a>! Я тогда в этом совершенно не разбирался… CFTC, комиссия по срочной фьючерсной торговле, начали угрожать мне судом. Говорили, что у меня нет лицензии, чтобы давать финансовые рекомендации… Писали и в личные сообщения, и на электронную почту. В общем, мне пришлось прекратить этим заниматься, потому что лицензии у меня не было, а в законах я тогда еще не разбирался.</p><p id="95638a6f-4d84-4c5d-b62a-f573a8bb50aa" class="">Но я успел привлечь внимание! Что привело к знакомству с двумя джентльменами, которые заинтересовались моим подходом, позволяющим получать одну <a href="http://tlap.com/kalkulyator-profita/">прибыль</a> за другой. Они предложили мне возможность побольше узнать о том, как устроены рынки. Это и привело меня к тому подходу, который я использую сейчас… Эти джентльмены поделились со мной информацией, которую не найти ни в книгах, ни у преподавателей. По своей сути она представляет собой все, чему учат в ритейл-сфере, только перевернутое с ног на голову.</p><p id="c72e77ad-0e98-40e4-a302-35ab1faa05cc" class="">Когда я начал смотреть на рынки таким образом… Для меня все изменилось. Я перестал использовать <a href="http://tlap.com/category/indikatoryi-2/">индикаторы</a> – их на моих графиках больше нет! Совсем. Все вращается вокруг времени, цены… И <a href="http://tlap.com/ekonomicheskiy-kalendar1/">календаря</a>! Дня недели, месяца года. Цена движется паттернами, причем эти паттерны очень стабильны. Кто-то считает, что все это – просто <a href="http://tlap.com/sezonnyie-dvizheniya-po-valyutam/">сезонные</a> тенденции. Да, отчасти это верно! Но эти явления следуют определенному ритму еще и потому, что рынки представляют собой своеобразную бизнес-модель, которая повторяется раз за разом. Я собрал и опубликовал немало бесплатной информации, которую каждый может самостоятельно изучить и сделать собственные выводы. В этом интервью я не успею описать всего этого даже вкратце! Мы можем отвести на эту тему весь час, но я даже не приближусь к глубине моих видео.</p><p id="57f23266-6228-40de-a417-0e6a07a75852" class="">— Эти два джентльмена – они связались с вами каждый по отдельности? Или они были знакомы?..</p><p id="2f066729-3a2c-4541-9e96-ccead9487023" class="">— Они оба были из финансового сектора. Как я и сказал, это были не брокеры и не преподаватели… В общем, они были не из тех людей, которые у всех на виду. И то, о чем они рассказывали… Это было тревожно! Когда ты приходишь в эту индустрию и начинаешь торговать, тебе кажется, что ты стоишь на открытом поле, и у тебя есть <a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-pochemu-s-samogo-pervogo-dnya-vse-shansy-skladyvayutsya-protiv-roznichnogo-treydera/18548/">шанс</a>! Но если ты делаешь то же самое, что и все остальные, <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-nakaplivayte-torgovye-shansy-v-svoyu-polzu/11010/">шанса</a> у тебя нет.</p><p id="949b0f01-593f-43ef-b211-26b44e051761" class="">Статистика такова: 90% <a href="https://tlap.com/forum/v-pomosch-treyderu/4/kak-myslit-kak-professionalnyy-treyder-chast-25/20076/">трейдеров</a> торгуют в убыток. Вне зависимости от класса активов! Конечно, можно сказать, что это обуславливается тем, что новички просто не ведают, что творят, и в целом это верно. Но дело еще и в том, что все мы дезинформированы! Все мы пьем из одного источника, но вода в нем испорчена. Большинство <a href="https://tlap.com/forum/v-pomosch-treyderu/4/kak-myslit-kak-professionalnyy-treyder-chast-35/20252/">трейдеров</a> делают одно и то же – то, что механически повторяют преподаватели… То, что преподносится как системы со случайным распределением <a href="http://tlap.com/iprofit-custom/">прибылей</a> и убытков. Я же учу, что все это – неправда. И каждую неделю доказываю это на личном примере в <a href="https://twitter.com/pavlus777">твиттере</a>. Невозможно достичь таких стабильных и последовательных результатов, если ты не знаешь, что делаешь. А та информация, что дается в книгах… У меня, кстати, собрана библиотека из 2 000 книг! Но ни одна из них не учит той информации, которой я делюсь бесплатно. И многие уже изучили эту информацию, переварили ее, взглянули на графики – и увидели!.. И для этого не нужно никаких индикаторов.</p><p id="93d28257-496a-4cfe-a082-e71d6107d682" class="">— У меня масса вопросов! Первый – насчет тех двух джентльменов… Вы поддерживаете с ними связь? Знаете ли вы, почему они решили встретиться с вами и поделиться этой информацией?</p><p id="7a3d4531-d6d8-4368-bdb8-f3de968aef8a" class="">— Им показалось, что я использую те же методы, что и они… Скажу, как есть! Слово «<a href="http://tlap.com/lovushki-market-meykerov/">маркетмейкер</a>» в последние 10-15 лет стало очень популярно. Многие рекламируют, что преподают маркет-мейкинговые концепты… Но те концепты, которые используются сотрудниками трейдинговых фирм, в которых «делают» рынки и создают <a href="https://tlap.com/forum/v-pomosch-treyderu/4/brokery-kak-zarabatyvayut-postavschiki-likvidnosti/15108/">ликвидность</a> – это совсем не те же самые концепты, о которых рассказываю я! Я рассказываю о том, что происходит на более высоких уровнях вплоть до <a href="http://tlap.com/pochemu-tsb-rf-slivaet-na-foreks/">центробанков</a>.</p><p id="43af2e18-522c-4f82-98e8-b2d148dbf56d" class="">Возьмем, например, британский фунт… Рост и падение его курса обуславливается не покупателями и продавцами, это – миф! Это так не работает. Как бы всем ни хотелось в это верить, все не так. В действительности, максимум и минимум дневного диапазона всегда определяется заранее, в полночь по Нью-Йорку. И я могу вам это доказать! В любой день недели мы можем сесть, посмотреть, и я скажу – случится вот это, и это случится. И это очень разочаровывает! Начинаешь задумываться, что еще из того, чему нас учили в книгах, на самом деле неправда?..</p><p id="e161ba79-53fc-450f-b4e5-18000d0a5856" class="">Те два джентльмена подумали, что я использую в своей торговле эту информацию, хотя на самом деле я всего этого не знал. Это действительно была слепая удача! Я просто закупался на бычьем рынке. Они решили провести несколько собеседований, чтобы разузнать, что я делаю. Поскольку я – человек, который любит поболтать о своей торговле, я все выложил им начистоту.</p><p id="ab22bfeb-4b3d-4b87-95d6-9d02eeaa1a60" class="">Тогда они спросили, не хочу ли я узнать о том, как все устроено на самом деле, и, так сказать, присоединиться к ним на этом пути. Но это предложение вызвало у меня достаточно сильный дискомфорт, потому что они были весьма требовательны... В частности, мне нужно было переехать, а еще я должен был быть доступен 24/7. Мне это не понравилось! Просто не понравилось. Я тогда был очень близок со своей семьей, и мне не хотелось им все это объяснять, даже своему дяде, который в свое время и вдохновил меня на это дело.</p><p id="6f9aaaa4-66a2-4753-887a-c071ec776836" class="">Но сам факт того, что я познакомился с этими джентльменами и узнал о том, что есть сторона, которую не видит подавляющее большинство <a href="https://tlap.com/forum/v-pomosch-treyderu/4/kak-myslit-kak-professionalnyy-treyder-chast-45/20346/">трейдеров</a>… Этого оказалось достаточно, чтобы я понял, что свободные рынки на самом деле не являются свободными. Они на сто процентов контролируемы. На сто процентов! И когда ты знаешь это и видишь это в цене… Ну, сначала это просто пугает! Ведь это совершенно не соответствует нормальным укоренившимся представлениям о действительности рынков.</p><p id="9848a202-dba6-425a-8c31-8a359e3fc941" class="">Я получаю за свою позицию массу критики! Но исходит она от людей, которые не изучали эту тему всерьез, не проверяли ее… Если бы это было неправдой, то этот паттерн не повторялся бы практически каждую неделю. Те ценовые движения, которые вы хотите увидеть – это не следствие ваших <a href="http://tlap.com/kak-ustanovit-indikator-v-metatrader-4/">индикаторов</a>, не следствие активности покупателей и продавцов! Все дело в деньгах! Цена на этот товар спускается к нам из <a href="https://tlap.com/forum/v-pomosch-treyderu/4/znakomtes-centralnye-banki/18059/">центральных банков</a>. <a href="https://tlap.com/forum/v-pomosch-treyderu/4/luchshaya-strategiya-na-2019-god-krupnye-banki/19760/">Центробанки</a> – это склад! Представьте себе обувной магазинчик. Кто устанавливает цены на обувь, выставленную на полках?</p><p id="0735e8b1-0d04-4363-bf13-685fb277b5ba" class="">— Магазин.</p><p id="1dee11c0-2fef-4dd4-a7e1-37ee16245ea4" class="">— Именно! А кто владеет валютой? Центральные <a href="http://tlap.com/kak-torguyut-banki-na-foreks/">банки</a>! Они предоставляют этот, если позволите, товар крупным фондам. Именно они играют главную роль! А не мы с вами, пытающиеся немного подзаработать на рынках. Все сводится именно к крупным институциональным фондам и к их <a href="https://tlap.com/forum/v-pomosch-treyderu/4/model-raspredeleniya-likvidnosti/20882/">ликвидности</a>.</p><p id="04692451-695b-4af8-b7d8-dbcf15ab0fcd" class="">Откройте график <a href="http://tlap.com/analiz-otchetov-cot/">COT</a>, и вы увидите эти прекрасные, диаметрально противоположные движения позиций <a href="http://tlap.com/ryinok-nastroen-protiv-vas/">крупных трейдеров</a> и коммерческих участников рынка. Они шагают в ногу! Ларри Вильямс описал это в своей книге «How I Made One Million Dollars Last Year TradingCommodities», выпущенной еще в семидесятых годах… Он описал это, но копнул недостаточно глубоко. Не думаю, что ему вообще удалось до этого дойти… Не хочу прозвучать неуважительно, но иначе он бы этому учил! Он ведь очень любит преподавать, по-настоящему любит.</p><p id="31303ad5-a367-4753-a955-949a6edb067c" class="">Цену приводят в движение именно центробанки… Когда они провоцируют нисходящее движение, рынок формирует пик. А когда восходящее – впадину. И их позиции диаметрально противоположны позициям крупных <a href="https://tlap.com/forum/v-pomosch-treyderu/4/kak-myslit-kak-professionalnyy-treyder-chast-55/20397/">трейдеров</a>. Чем я занялся? Я сосредоточился на том, что они делают в промежутке между этими моментами. Потому что именно это – реальный производственный процесс институциональных фирм. Это – <a href="http://tlap.com/kak-opredelit-trend/">тренд</a>, это – импульс, это – единственное, что важно! И не нужны никакие индикаторы. Я ушел от них и сосредоточился на <a href="http://tlap.com/videokurs-price-action-torgovlya-na-foreks-bez-indikatorov/">Price Action</a> и на времени – на днях, месяцах, годах... И осознал, что существуют определенные паттерны, которые повторяются раз за разом. Мое знакомство с этими двумя джентльменами позволило мне осознать, что рынки полностью контролируемы, что ценой управляют центробанки, и что именно они устанавливают максимумы и минимумы для цены… Нам кажется, что все дело в том, что цена доходит до какого-то <a href="http://tlap.com/urovni-fibonachchi/">уровня Фибоначчи</a> <em>(смеется)</em>, до зоны <a href="http://tlap.com/urovni-sprosa-i-predlozheniya/">спроса или предложения</a>, до <a href="http://tlap.com/trendovyie-linii/">трендовой линии</a>, что она формирует какой-то <a href="http://tlap.com/garmonicheskie-patternyi/">гармонический паттерн</a>… Но все эти вещи не имеют никакого отношения к тому, как цена движется на самом деле. Никакого!</p><p id="0f5a4ecd-cc83-47c5-ac90-a76f9f406f1c" class="">Сначала я стараюсь определить все факторы, которые сейчас играют роль, и понять, какой сценарий развития событий наиболее вероятен для следующей недели – бычий или медвежий. Потом я разбиваю его на <a href="http://tlap.com/teoriya-tsiklov-na-forex/">циклы</a> по 24 часа. В полночь по Нью-Йорку я стараюсь определить, где находятся <a href="http://tlap.com/kak-pravilno-opredelyat-urovni/">уровни</a>, на которых центробанки, вероятно, захотят изменить цену. Вы тоже можете научиться это делать, есть множество ресурсов, в том числе и бесплатных, но не ищите эту информацию в книгах для ритейл-<a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-2-tipa-treyderov/10316/">трейдеров</a>.</p><p id="ed38d049-d543-426c-bb34-bc3d59dd1dd8" class="">Не хочу прозвучать заносчиво… Ведь многие считают, что я очень заносчив! Но я всего лишь говорю правду. То, что нам советуют изучать и отслеживать – это все фарс… Да, временами это работает! Я сам в свое время целых девять месяцев неплохо на этом зарабатывал. И я мог поклясться, что мой подход работает! Но дело было не в этом... Дело было в том, что я закупался на бычьем <a href="http://tlap.com/otkuda-berutsya-trendyi/">тренде</a>, который был спровоцирован коммерческими участниками рынка! Я закупался на рынке с надбавкой… Рынок с надбавкой – это когда текущие контракты продаются по более высоким ценам, чем контракты на следующие месяцы. Обычно все наоборот! Обычно чем дальше в будущее, тем выше цены, ведь производителям товаров нужно платить за хранение, за страховку… Больше рисков, больше трат, так что неудивительно, что они хотят за будущие фьючерсные контракты больше денег!</p><p id="37bde733-2087-43ed-81b3-4277d9bd71c4" class="">Когда я покупал на Чикагской товарной <a href="http://tlap.com/horosho-li-na-birzhe/">бирже</a> пшеницу, я не понимал, что сейчас – бычий рынок коммерческих клиентов. Цены, бывало, подскакивали до 5000 долларов за контракт! Я не знал, что в определенные дни месяца у определенных товаров нет лимита. Они могли дойти до любой отметки! Я постоянно обнаруживал себя в прибыли, войдя на бычьем движении... Но это было обусловлено вещами, которые я тогда еще не понимал. И я на этом обжегся. Я планирую написать об этом книгу <em>(смеется)</em>, потому что то, как сложились определенные обстоятельства моей жизни… Это просто невероятно! Настоящее приключение.</p><p id="9e6d0c36-bef6-4d7f-8caa-288f323548aa" class="">— Забавно, но как раз на этой неделе мне пришло письмо от водителя лондонского кэба. Он написал, что ему нравится мое шоу, и все такое… А потом рассказал, что часто подвозит <a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-4-tipa-treyderov/10552/">трейдеров</a> из Сити. Из Barclays, других банков… В общем, крупных <a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-zadacha-nomer-odin-dlya-pribylnyh-treyderov/14857/">трейдеров</a>! И часто слышит, как те говорят, что ритейл-трейдинг в принципе не может быть прибыльным, потому что ритейл-<a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-smeshnoy-paradoks-v-neadekvatnom-myshlenii-mnogih-treyderov/13111/">трейдерам</a> доступно гораздо меньше информации, чем профессионалам. Интересно, что вы утверждаете то же самое! В определенной степени… Вы сказали, что есть какие-то бесплатные ресурсы, в которых все это описывается?.. Может, добавим эти ссылки в описание к выпуску?</p><p id="b3139a6c-9ef8-4ee6-912f-7fd7b5d5bdb0" class="">— Я собрал все в своих видео на YouTube, мой канал называется <a href="https://www.youtube.com/user/InnerCircleTrader/videos">InnerCircleTrader</a>, так что найти все очень просто.</p><p id="3340d490-e0b9-4d1e-aafa-14e2a85e77b0" class="">— А, окей, хорошо! Что ж, вступление у нас получилось отличное! А теперь давайте перейдем к подробностям вашей торговли. Как бы вы описали свой стиль трейдинга?</p><p id="8971a933-fcd4-482e-9455-5fd46b2d77c0" class="">— Что-то среднее между краткосрочным трейдингом и дейтрейдингом. Я отслеживаю недельный <a href="https://tlap.com/forum/v-pomosch-treyderu/4/strategiya-strategiya-torgovli-v-diapazone/18732/">диапазон</a>. Вхожу обычно <a href="http://tlap.com/vnutridnevnaya-torgovlya/">внутри дня</a>, но при этом пытаюсь проехаться на недельном движении.</p><p id="a7e91f6a-3a3d-4fd2-b1df-5cf996d1171e" class="">— Какие <a href="http://tlap.com/kakoy-taymfreym-vyibrat/">таймфреймы</a> вы при этом используете?</p><p id="32c1a024-3118-4d34-84df-6c19a458087a" class="">— <a href="https://tlap.com/forum/v-pomosch-treyderu/4/lans-begs-pochemu-tak-vazhno-imet-strategiyu-dlya-vyhoda-iz-sdelki/15604/">Сделку</a> я обычно открываю либо на пятиминутном, либо на пятнадцатиминутном <a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-preimuschestva-kratkosrochnyh-taymfreymov/10953/">таймфрейме</a>. Сетап для входа отслеживаю на часовом графике. А направленность рынка определяю на <a href="http://tlap.com/vse-sekretyi-torgovli-na-d1/">дневном таймфрейме</a>.</p><p id="6e4e8fb5-ae30-4d6d-917e-3606e4e76dec" class="">— И сколько <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-esli-vy-perestanete-iskat-luchshie-sdelki-oni-sami-budut-nahodit-vas/18683/">сделок</a> вы открываете в неделю?</p><p id="6e1164b3-d1f5-4f10-b323-aee259f92614" class="">— Около двух. Я в течение целого года публиковал в твиттере еженедельные входы, показывая, что такое стабильность. Просто хотел продемонстрировать, как выглядела бы моя торговля, если бы я входил каждую неделю без исключений. Но я не всегда торгую каждую неделю... Все, что мне нужно – хороший сетап. И если он появляется… Моя цель на неделю – 50-75 <a href="http://tlap.com/chto-takoe-novyie-i-staryie-punktyi/">пунктов</a>. Получаю 50 – останавливаю торговлю!</p><p id="491e6526-57f7-41ca-8762-6e9c0d270c80" class="">— А ваш винрейт?</p><p id="9a2300ed-c329-4af4-a825-ba392d58e914" class="">— Позволю нашим слушателям самим посмотреть в моем твиттере. Но могу сказать, что он в районе 90%.</p><p id="5e4d5ccd-9e4e-4e67-bde4-280bd597f65e" class="">— Какое <a href="http://tlap.com/tochnost-vhodov/">соотношение риска к прибыли</a> вы используете в своих <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-chto-sleduet-delat-do-vo-vremya-i-posle-sdelki/17922/">сделках</a>?</p><p id="b50ef7a7-ff1e-4f38-bea0-af6b5b235d4f" class="">— Обычно я ищу сетап с соотношением не менее 1:3. Иногда получается 1:5 или больше, но это – идеальный вариант.</p><p id="d233d594-fc80-4b2d-9e78-6de96a928c61" class="">— Сколько инструментов вы отслеживаете?</p><p id="c5254869-c913-464f-9cd6-b34e69bb430e" class="">— В основном я слежу только за EURUSD и британским фунтом.</p><p id="fd17ad34-3150-4801-9fb4-d6cc2b65ad75" class="">— Торгуете что-то одно?.. Или…</p><p id="dd9e3fe6-f823-41a2-b16d-214b0d0e6c99" class="">— Да, либо одно, либо другое. Если я ничего не вижу на евро, но вижу на кабеле – значит, торгую <a href="http://tlap.com/slovar-foreks-zhargona/">кабель</a>! И наоборот, если найду что-то на евро, но не увижу ничего интересного на кабеле, значит, буду торговать евро. Найти что-то можно всегда!</p><p id="996e49be-c82a-45fb-8320-06110c71dada" class="">— Что из себя представляет ваш типичный торговый день?</p><p id="3427beac-4dbe-4d98-a3fb-c5486eb0e6f9" class="">— Ну, это зависит от <a href="http://tlap.com/ekonomicheskiy-kalendar/">экономического календаря</a> и от дня недели… Свой сетап я обычно ищу между понедельником и средой. В этом промежутке обычно формируется недельный пик или впадина. Если общий <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-6-sovetov-o-tom-kak-opredelit-trend-na-grafikah/19294/">тренд</a> на рынке восходящий, то в 70% случаев в промежутке от понедельника до среды (все считается по времени открытия Нью-Йорка) цена формирует впадину. Этот факт сам по себе – феноменальное преимущество!</p><p id="d6636996-06c7-465a-863e-01be620af52a" class="">Повторю. Если вам удается определить, что рынок на этой неделе, скорее всего, будет бычьим, то существует семидесятипроцентная вероятность, что минимум недели сформируется в промежутке от полуночи понедельника (опять же, по времени Нью-Йорка) до открытия Нью-Йорка в среду.</p><p id="77fa3b47-55f4-4f9e-a496-be7f5fbc6c12" class="">Если вы отслеживаете <a href="https://tlap.com/forum/v-pomosch-treyderu/4/ekonomicheskiy-kalendar-istoriya-ekonomicheskogo-kalendarya/7221/">экономический календарь</a>, то должны знать, какие события двигают рынок. Все эти красные и желтые <a href="http://tlap.com/uchityivat-vihod-novostey/">новости</a>… Их большая часть обычно выходит в промежутке между открытием Лондона и Нью-Йорка. Это – дымовая завеса! Центробанки используют эти события, чтобы сделать то, чего никто не ожидает. Я – не фанат <a href="http://tlap.com/fundamentalnyiy-analiz-forex/">фундаментального анализа</a>! Конечно, я признаю его определенные аспекты… Те, которые являются наиболее простыми и близкими к реальности. Но в большинстве случаев я просто оцениваю, как много манипуляций ожидается между понедельником и средой. В свою сделку я вхожу в промежутке между открытием Лондона и открытием Нью-Йорка.</p><p id="8ee9eb10-6d9e-4cbb-8796-581f40353d20" class="">— Отличный ответ! Немного отступая от темы форекс… Что вы думаете о <a href="http://tlap.com/kak-torgovat-bitkoinom-na-forex/">биткоине</a> и других <a href="http://tlap.com/tag/kriptovalyutyi/">криптовалютах</a>? Пробовали ли вы торговать их? Наблюдаются ли там те же реакции?</p><p id="fea0e13c-cd43-48f1-999e-767e6ef7370a" class="">— Никогда не торговал <a href="http://tlap.com/kak-torgovat-kriptovalyutami/">криптовалюты</a>, но у меня есть много учеников, которые их торгуют. На реальные деньги. Те правила, которые работают на форекс, товарах и фьючерсах, распространяются и на биткоин. Во всяком случае, так утверждают мои ученики! Я поглядываю на цены криптовалют только время от времени. Иногда делюсь своими идеями с сообществом в твиттере, но самого меня не тянет торговать биткоин… Думаю, он должен пройти долгий путь, прежде чем я об этом задумаюсь. Хотя сомневаюсь, что это когда-нибудь случится. Я крепко обосновался на своих активах! И если с форекс возникнут какие-то проблемы, то я, скорее всего, вернусь к облигациям.</p><p id="abb36f38-3206-49c8-b2b2-4657a59ac596" class="">— Круто! Как вы считаете, что отличает вас от других <a href="https://tlap.com/forum/v-pomosch-treyderu/4/brett-stinbardzher-zhestkiy-sovet-dlya-nachinayuschih-treyderov/19104/">трейдеров</a>, которые пока не смогли добиться успеха? Есть ли у вас какие-то особенные черты характера? Или, может, вы в свое время предприняли какие-то особые действия, которые могли бы предпринять и наши слушатели?</p><p id="bba44505-f5db-4853-a371-2d1f34f23f64" class="">— У меня ОКР, обсессивно-компульсивное расстройство <em>(смеется)</em>. Вот такая у меня особенность! Хотя обычно это считается недостатком, мешающим обучаемости.</p><p id="647e19fa-3992-481f-aec8-42aa26b6d143" class="">Любопытно, что когда <a href="http://tlap.com/broker-i-stabilnyi-zarabotok/">трейдеры</a> сталкиваются с трудностями, многие из них решают обратиться к близким людям, желая получить от них поддержку… Все так делают! И я тоже. Я рассказал о трейдинге своим друзьям, своей семье… Сказал, что планирую заниматься им всю свою жизнь. И никто из них (кроме моего дяди) не ответил мне, что это – хорошая идея… Или что они верят в меня. Так что не делайте этого, это контрпродуктивно! Это может привести к тому, что вы прислушаетесь к их доводам и отговорите самого себя от занятий трейдингом.</p><p id="fee65776-39a5-45b9-9744-927e70dae734" class="">За последние 27 лет я, наверное, раз 20 бросал торговлю. Все <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-pribylnye-treydery-99-vsego-vremeni-nichego-ne-delayut/18799/">трейдеры</a> периодически испытывают это чувство! Чувство, что им хочется бросить трейдинг. Вам нужно понять, что в большинстве случаев мы сами вызываем в себе эти мысли… У меня даже есть презентация в SoundCloud, она называется «Are you deserving?» <em>(«Достойны ли вы?»)</em>. Дело в том, что мы очень легко поддаемся влиянию краткосрочных проблем и начинаем думать «знаешь, что? Это не для тебя. Ты не сможешь, ты не справишься». Если вы в это поверите – это станет правдой. Я в это так и не поверил. Я бросал трейдинг, потому что не выдерживал давления, но потом оно спадало, и я возвращался к торговле.</p><p id="aba72df1-1093-40f3-aae3-79b383dd98a6" class="">Что отличало меня от всех остальных? Наверное, то, что я знал наверняка, что выйду на пенсию в сорок лет. В двадцать с небольшим лет я уже знал, что в сорок я работать не буду. Это была моя цель! Я собирался зарабатывать по тысяче долларов в месяц, откладывать, наращивать сбережения с помощью <a href="http://tlap.com/kalkulyator-slozhnogo-protsenta/">сложного процента</a>… И в сорок уже бросить работу. Мне это удалось гораздо раньше! Но смысл в том, что я не верил в «нормальное». Я всегда чувствовал, что существует какая-то иная перспектива, не такая, как все остальные! Я всю свою жизнь был белой вороной. Когда я осознал это… Именно тогда мой трейдинг начал приносить плоды. Потому что это помогло мне связать свой характер со своим торговым подходом. Все, что остальные слышат о рынке, что они о нем думают, во что они верят… Все во мне диаметрально этому противоположно.</p><p id="20f79edc-7246-4b4f-bcff-f796a5e8edd2" class="">— Да, думаю, в этой индустрии очень важно быть не таким, как все. Да и в жизни в целом! Ладно, следующий вопрос: что вы можете посоветовать тем ритейл-<a href="https://tlap.com/forum/v-pomosch-treyderu/4/price-action-treydery-v-lovushke/12328/">трейдерам</a>, которые пока что продолжают работать на обычной работе?</p><p id="f3e386cb-50c2-4246-b1aa-169ff1b04e9a" class="">— Когда у меня случились те девять удачных месяцев, я бросил работу, решив, что теперь буду зарабатывать трейдингом… И слил! Вообще, мне часто задают вопрос, что бы я сделал иначе, будь у меня возможность вернуться в прошлое. И вот, пожалуй, опыт, который я обрел за 27 лет торговли… Я бы не пытался торговать так много рынков. Я сосредоточился бы только на одном. И занялся бы краткосрочной торговлей! Не позиционной, потому что ее очень тяжело придерживаться. В позиционном трейдинге нужно обладать терпением и пониманием, которых нет ни у кого! Даже у тех, кто по своей природе – позиционный трейдер… Этот тип трейдинга никогда не будет вызывать интерес и вдохновлять так, как это делает краткосрочная торговля. По-моему, это – идеальный вариант! Потому что она дает трейдерам реальный стимул. И предоставляет массу возможностей как для изучения рынков, так и для торговли! Каждую неделю можно найти какой-нибудь вход.</p><p id="6e90a9a8-07d0-4d16-bb3f-6a7f64ee9182" class="">Тем слушателям, которые заинтересованы в том, чтобы начать торговать, или уже торгуют, но пока не достигли стабильности и последовательности, я посоветую вот что. Выберите какой-нибудь класс активов. Неважно, какой: криптовалюту, акции, фьючерсы, форекс… А потом выберите из этого класса активов только один рынок. Изучите его! Познайте до мельчайших деталей и характеристик. С этим делом вполне можно справиться за полгода, если вы будете ежедневно изучать все, что происходит на рынке. Печатайте графики, делайте на них пометки, отмечайте, что вызывает в вас резонанс. Обращайте внимание на паттерны, которые повторяются раз за разом… В определенное время суток происходят определенные вещи! Максимумы и минимумы недели, дня – когда они формируются?.. Сосредоточьтесь на этом, и, думаю, вы очень быстро поймете, что на рынке часто возникают возможности, которые не требуют, чтобы их нянчили.</p><p id="0831461a-574a-4711-adf7-f634f6286d32" class="">Все мы несем какую-то ответственность! Кто-то заботится о семье, кто-то о себе, кто-то ублажает своего босса… Пока вы не начали зарабатывать спекуляциями, вам нужна работа, которая будет приносить вам доход. Лучший совет, который я могу дать новичкам и интересующимся – не спешите. Как я сказал, свою цель я поставил себе на 20 лет вперед! Когда мне было 20, я решил выйти на пенсию в 40. И в трейдинг я вошел с таким же образом мыслей. Правда, когда я начал торговать и увидел, как быстро может расти депозит… Я лишился разума <em>(смеется)</em>, а вместе с ним и дисциплинированности.</p><p id="165d15a2-ca53-4159-be51-e7c01f79ca72" class="">Так что вам нужно на раннем этапе выработать определенные правила, определенные параметры торговли, а потом не отступать от них. Не отвлекайтесь на телефон, не открывайте сразу несколько <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-kak-ya-planiruyu-svoi-sdelki/18123/">сделок</a>! И не пытайтесь компенсировать трейдингом различные стрессы – от работы, от тоски по семье, от нехватки денег… Не используйте все это в качестве катализатора для входа в рынок! Мы думаем «если эта <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-pochemu-ya-ne-otkryl-etu-sdelku/18533/">сделка</a> отработает, и я получу деньги, то я почувствую себя лучше и в плане другой ситуации». Но это так не работает! Никогда… Сосредоточьтесь на своем развитии, познайте себя – что вы за трейдер? Как вы мыслите? И торгуйте в краткосроке! Сделайте все это, и я гарантирую, что вы увидите прогресс и развитие, которых в ином случае не достигли бы.</p><p id="993b82ae-263f-4436-ba0e-c8ed67d0172e" class="">— Великолепный ответ! Народ, пожалуйста, обратите внимание! Перемотайте, переслушайте! На самом деле, кажется, я впервые слышу подобный ответ! Мне особенно близки два ваших совета: не торопиться и воспользоваться краткосрочным подходом. Обычно все советуют торговать <a href="http://tlap.com/vazhnaya-informatsiya-dlya-torgovli-na-dnevnyih-grafikah/">дневные графики</a>! Скажите, какую долю в вашем трейдинге составляет <a href="http://tlap.com/tehnicheskiy-analiz-na-forex/">технический анализ</a>, а какую – фундаментальный?</p><p id="e2578840-127f-4ceb-80c5-4b6c3f200767" class="">— Ну, если говорить о форекс… С долгосрочной точки зрения он торгуется на базисе дифференциалов. У какой страны высокие <a href="http://tlap.com/procentniye-stavki/">процентные ставки</a>? У какой низкие? Объедините их валюты в пару, и в долгосроке с точки зрения «фундамента» (в кавычках) у нее будут условия для роста. Это – фундаментальная долгосрочная позиция, так называемый <a href="https://tlap.com/forum/v-pomosch-treyderu/4/strategii-kerri-treyd-na-parah-s-yenoy/15526/">кэрри-трейд</a>. Для меня наличие такого фундаментального фона играет огромную роль! Думаю, это – самый важный фундаментальный фактор, присутствующий на форекс, если говорить о долгосрочных масштабах.</p><p id="770984d2-424a-400b-ad1d-3cb226302bab" class="">А краткосрочные данные – импорт, продажи, застройки, занятость… Как я уже сказал, я считаю, что все это в той или иной степени используется для того, чтобы расстроить краткосрочный <a href="https://tlap.com/forum/v-pomosch-treyderu/4/brendon-terner/17965/">сентимент</a>. Лучшее, что я могу тут сказать – это посоветовать слушателям провести собственное исследование. Краткосрочные фундаментальные данные публикуются постоянно. И люди тратят кучу времени и денег, пытаясь во всем этом разобраться! Но как объяснить ситуации, когда выходят бычьи данные, но рынок при этом падает? Почему он ведет себя не так, как должен? Обычно отвечают, что эти данные уже были учтены в цене <em>(смеется)</em>. Всегда можно найти оправдание произошедшему!</p><p id="c201a990-ea2d-4a2d-bf42-7c87e6f771a2" class="">Если бы мне было нужно провести границу между <a href="http://tlap.com/osnovnyie-figuryi-ta-na-foreks/">техническим анализом</a> и фундаментальным… Пожалуй, моя торговля – это на 20% фундаментальный анализ, который представляет собой <a href="http://tlap.com/vliyanie-prots-stavok-na-valyty/">процентные ставки</a>. Именно это преследует рынок в долгосроке! Потому что именно в этом кроется доход. Вся остальная моя торговля – это технический анализ: время, цена, день.</p><p id="e8a43933-b300-41de-8d14-8ea09beb6930" class="">— Вы посоветовали изучать графики, делать пометки, искать паттерны… Не могли бы вы подсказать, на чем стоит сосредоточиться нашим слушателям, пока они занимаются этим процессом?</p><p id="39d65b86-bea4-4526-ad23-88893a005166" class="">— Практически первое, что мы узнаем в ритейл-сфере – это концепт <a href="https://tlap.com/forum/v-pomosch-treyderu/4/price-action-perestante-nepravilno-torgovat-na-urovnyah-podderzhki-i-soprotivleniya/16551/">поддержки и сопротивления</a>, на которых формируются «<a href="http://tlap.com/dvoynaya-vershina-dvoynoe-dno/">двойное дно</a>», «двойная вершина», «тройное дно», «тройная вершина», вещи такого порядка… Это – мой любимый сценарий! Если мне удается определить, что рынок предрасположен к движению вверх, то я буду использовать двойную и тройную вершины в качестве <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-kakie-realnye-tseli-dolzhen-stavit-pered-soboy-treyder-valyutnogo-rynka/14278/">цели</a>… Причем так можно делать на любом <a href="http://tlap.com/kak-vyistavit-nestandartnyiy-taymfreym-v-mt4/">таймфрейме</a>!</p><p id="b9103c3b-973f-4965-85b6-d4d649a52696" class="">Скажем, я определяю, что общее настроение на рынке бычье. После этого я могу опуститься на график H4 и посмотреть, не располагается ли выше на 150-200 <a href="http://tlap.com/raschet-stoimosti-punkta/">пунктов</a> «двойная вершина»… Мне хватит даже 50 пунктов! Если она там есть – значит, я получил свою <a href="https://tlap.com/forum/v-pomosch-treyderu/4/soprovozhdenie-sdelok-chast-1/20800/">сделку</a> на эту неделю. Если нет, значит, и смотреть не на что, я перехожу к следующему сетапу или к следующей паре, в моем случае это либо EURUSD, либо GBPUSD. Если ни на одной из пар нет сетапа, то я просто ничего не делаю.</p><p id="c8050e2b-75b5-42d3-b092-f67a73b105d5" class="">Смысл этого паттерна в том, что над этими вершинами находится пул ликвидности! Такую пометку я и делаю на графике: «ликвидность покупок». До этого на данном уровне кто-то продал, кто – неважно! Важно то, что там присутствует ликвидность. Как я уже упомянул раньше, рынками движут деньги и ликвидность… И деньги находятся вовсе не между началом и концом движения! Нас учат именно так, но нет. Деньги там, где начинается движение! Потому что с помощью денег атакуется ликвидность стоп-ордеров на продажу, цена опускается за предыдущий минимум и собирает эти <a href="http://tlap.com/kak-ispolnyayutsya-ordera-foreks/">ордера</a>... Кто находится за минимумом? Продавцы! «Умные деньги» используют эти ордера для своих покупок. Я делаю то же самое! Я закупаюсь под прошлым минимумом и ищу цель за равными максимумами – двойной или тройной вершиной. Я вхожу только тогда, когда могу сделать 50 пунктов или больше. Если расстояние меньше, то меня этот сетап не интересует, я переключаюсь на поиск другого. Я каждый день отслеживаю появление этого сценария на H1 и H4.</p><p id="7514d061-522f-46e7-8941-2124a4dc9e2d" class="">— Здорово! Вы отлично все объяснили! Народ, этот отрывок тоже стоит переслушать! Ладно, Майкл, пришло время для очереди коротких вопросов! Первый: сколько времени у вас ушло на то, чтобы добиться стабильной прибыльности?</p><p id="62af2ae5-624d-4070-bbd8-a85aacc365fb" class="">— Ну, если не считать за стабильную прибыльность те девять месяцев, потому что это была чистая удача… Следующие пять лет дела у меня шли с переменным успехом. Я выигрывал, выигрывал, выигрывал – сливал депозит… Находил новый подход, выигрывал, выигрывал, выигрывал – сливал депозит… Так продолжалось до тех пор, пока я не начал применять идеи, подкинутые мне теми «маркетмейкерами» (в кавычках) и биржевыми трейдерами. Я изучил тему ликвидности, того, как движутся рынки, того, как поставляются цены на разные классы активов... Это изменило для меня все! В общем, если вкратце, мне потребовалось шесть лет, чтобы добиться стабильности в своем подходе, почувствовать комфорт, разобраться, что именно меня интересует, и перестать отвлекаться на другие паттерны и всяких гуру. Постоянно выходят новые книги! И появляются новые учителя! Кто-то выигрывает соревнование по трейдингу, кто-то выпускает книгу, кто-то выкладывает видео на YouTube… Постоянно появляется что-то новое! Но обретя свой подход, я перестал за всем этим следить.</p><p id="e5809e74-115c-49e8-b1a0-a7c2c3a71278" class="">На шестой год трейдинга во мне что-то переменилось. Найдя свой подход, я просто перестал чувствовать необходимость в изменениях. И я начал его придерживаться! Я научился эффективно использовать сложные проценты, не завышая рисков, и охотиться только за низко висящими фруктами. Все, к чему я стремлюсь – получить всего 50 пунктов в неделю! Со временем это значение выросло до 75. А получив их, я останавливаю торговлю. Я не сравниваю себя с другими трейдерами, не задумываюсь о том, что мне стоит попробовать поторговать другой рынок, потому что кто-то на нем недавно сделал кучу денег… Меня перестало заботить то, что делают другие, я просто сосредоточился на том, что делаю я сам. И это отразилось на результатах.</p><p id="efe16b21-56cf-4d1e-ba3e-c52a36027806" class="">— В чем заключается ваш психологический подход к трейдингу? Есть ли у вас какие-нибудь особые техники, которыми вы могли бы с нами поделиться?</p><p id="0a19a175-dc86-4b15-805d-3639361f8ec2" class="">— Ну… Ничего такого, что я вам уже не рассказал. Я уделяю много внимания таймингу и точности ценовых движений. Не хочу тратить много времени на те рынки, которые не сдвинулись должным образом в должное время и не предрасположены к крупному движению вверх или вниз. Для меня это очень важно! А еще я люблю торговать притихшие рынки. Когда на каком-то рынке царит волнение, а потом оно вдруг сходит на нет… Я хочу войти в <a href="https://tlap.com/forum/v-pomosch-treyderu/4/soprovozhdenie-sdelok-chast-2/20830/">сделку</a>! Потому что высока вероятность, что этот рынок вскоре снова начнет вытворять что-то из ряда вон выходящее.</p><p id="baf30bd5-bf93-40bd-8773-38d87ad7fee4" class="">— Ваш любимый сетап на вход?</p><p id="9ce4ac20-a80f-4c81-b718-66bc852514d5" class="">— Ну <em>(смеется)</em>… Тот, о котором я вам уже рассказал! С целями на равных пиках или впадинах. Вообще, я использую этот тип целей во многих своих сетапах. Их очень легко определять! Так что, пожалуй, мой любимый сетап – покупка на откате вниз в ожидании движения к двойным или тройным вершинам и продажа на <a href="http://tlap.com/price-action-vhod-na-otkate/">откате</a> вверх в ожидании движения к двойному или тройному дну.</p><p id="110c5788-ef0d-4d4d-b73c-23e71ede10d3" class="">— Какую стратегию вы используете для <a href="http://tlap.com/price-action-strategii-vyihoda/">выходов</a> и <a href="http://tlap.com/soprovozhdeniye-poziczij-forex/">сопровождения открытых сделок</a>?</p><p id="f953271e-ae29-4e54-8520-80c5ef49c7b1" class="">— Ну, в своих видео я люблю повторять, что выходы – это мое слабое место. Но за последние 20 лет мне все-таки удалось выработать стиль, к которому я привык, и который стал для меня комфортен. Мой анализ обладает высокой точностью, но иногда возникают проблемы с исполнением ордеров из-за ликвидности, как раз сегодня с этим столкнулся…</p><p id="08c137ba-324f-47ff-8d2f-e6c010e1f5af" class="">Я представляю, до какой отметки должна дойти цена! Обычно я выхожу на 15-20 пунктов раньше. Даже несмотря на это, мне почти всегда удается получать свои 50-75 пунктов в неделю. Так что мой подход – искать зоны, к которым должна притянуться цена… Я называю этот концепт «притягательной ликвидностью». Где скапливаются все ордера? Я хочу выйти на движении к этому пулу ликвидности! Если мне удалось его ухватить – хорошо, с меня хватит! И плевать, если движение продолжится, и цена пройдет в два раза дальше, чем я ожидал! Неважно. Такова моя стратегия выхода.</p><p id="0ee75cf4-5044-49b3-ad1c-a912024d80d4" class="">— Можете посоветовать какую-нибудь книгу или видео по торговле?</p><p id="39cf2868-f48d-45e8-b185-e18916324a78" class="">— Я уже упоминал книгу Ларри Вильямса «How I Made One Million Dollars Last Year Trading Commodities». Думаю, она должна быть в библиотеке каждого трейдера... Если вы торгуете – она у вас должна быть, точка. И неважно, какой рынок вы торгуете, товарный или какой-то другой…</p><p id="89c0aa08-1f8d-4287-a9a6-ee04998dabcd" class="">Если у вас есть книга «Технический анализ финансовых рынков» Джона Мерфи – прочитайте ее, изучите ее! А потом переверните все с ног на голову, потому что эта книга – библия ритейл-мышления. Попробуйте, и вы удивитесь, как хорошо это работает.</p><p id="ccbab937-b0b1-4e83-bb9b-0c53e7c9fe01" class="">— Забавно, но ни один мой гость еще не рекомендовал именно эту книгу Ларри Вильямса! А ведь я провел уже почти сто девяносто выпусков… Даже сам Ларри ее не упоминал <em>(смеется)</em>! На совершенствование какого навыка вы посоветовали бы всем трейдерам потратить следующий месяц? И как лучше всего подойти к этому обучению?</p><p id="c0ef0122-1a81-4394-9a16-af13b548833b" class="">— Научитесь контролировать самих себя. Главное препятствие на пути к стабильности – это наши импульсы, порывы к чему-либо… Любой трейдер рано или поздно получает прибыль. Проблема в том, что мы влюбляемся в это ощущение! Когда мы что-то сделали правильно – и получили награду… Мы отправляемся в соцсети, чтобы поделиться этим со всеми… Но нужно остановить себя. Не делайте этого! Не гонитесь за чужим одобрением. Лучше сосредоточьтесь на разработке правил для процесса, который помог бы вам пореже испытывать это чувство.</p><p id="bb698268-d03d-44d6-9ffc-7fd99e6fcd3c" class="">Конечно, я не утверждаю, что нельзя зарабатывать, используя скальперскую ментальность и открывая по четыре-пять сделок в день… Я сам этим занимался. Но я осознал важность самоконтроля и самодисциплины…</p><p id="d4c251e6-b33e-4a46-8634-1a7806c496ff" class="">К какой цели стремятся все новички?.. Каждый хочет бросить работу и зарабатывать на жизнь трейдингом! Но они не задумываются о том, что под этим подразумевается. Они говорят: «Не хочу работать на этого парня, хочу работать на самого себя». Но вы даже не знаете самого себя! Большинство людей, которые говорят это, не знают самих себя! Они не знают, как они отреагируют, когда сделают кучу денег, они не знают, как отреагируют, когда сольют депозит или получат серию в семь-восемь убытков подряд… Они не знают, что будут делать!</p><p id="a6de40e6-8680-4645-a0ab-9885bf6f7591" class="">Но когда работаешь на босса, ты знаешь, что делать. Ты знаешь, что он за человек, ты знаешь, что он от тебя требует. Оставайтесь в этой среде, пока не разберетесь в самих себе! Освойте сначала в совершенстве самого себя! Разберитесь в том, как вы реагируете на те или иные вещи. Когда вы находитесь в сделке, когда вы с кем-то ссоритесь, злитесь, угодили в передрягу, когда вас не слушаются ваши дети, когда вы плохо себя чувствуете, когда вы поругались с женой или мужем… Эти ситуации больше всего предрасполагают к саморазрушительному поведению! Так что сосредоточьтесь на них.</p><p id="3240f154-8e9e-4382-9ee4-d4693b351e24" class="">Записывайте все свои события-триггеры в журнал. Я веду дневник с шестнадцатилетнего возраста и могу рассказать вам о каждом дне своей жизни. А еще я могу рассказать вам, какие из моих действий привели к самым крупным <a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-van-tarp-naibolee-chastye-oshibki-sovershaemye-treyderami/10756/">ошибкам</a>. Это всегда случалось в одной из вышеперечисленных ситуаций! Мы не можем просто взять и выбросить из своей жизни дискомфортные периоды, в которых мы испытываем беспокойство, <a href="http://tlap.com/kak-pobedit-strah-v-treydinge/">страх</a>, <a href="http://tlap.com/vazhnoe-kachestvo-treydera/">нетерпение</a>…</p><p id="0844b339-1a2a-400a-a8ec-b0adf31705b7" class="">Трейдинг – это не лотерея! Людям кажется, что они могут прийти на рынок, положить деньги на депозит, открыть сделку – и почувствовать себя лучше… Даже если вы получите прибыль, это только поощрит токсичное мышление. Вы подкрепите подсознательную установку о том, что вы можете сбежать из реального мира в мир трейдинга. Это – ваш эскапизм, ваша волшебная страна, в которой вы рано или поздно сможете уволиться, начать путешествовать, разъезжать на модных машинах, питаться в дорогих ресторанах и никогда не задумываться о ценниках. Обо всем этом вы думаете, когда открываете сделку. Признаете вы это или нет, но в этом все дело! Вы ведь здесь для того, чтобы делать деньги. Но вы никогда не сможете их сделать, если будете пытаться компенсировать негативные ощущения входами в рынок.</p><p id="4b47c481-12f1-4b95-b081-fbe6651c2a3a" class="">Вы слишком мало знаете о самих себе! Изучите все свои триггеры. Именно поэтому, кстати, я учу торговле только на <a href="http://tlap.com/kak-otkryit-demo-schet/">демо-счетах</a>! Все люди склонны к саморазрушению. Дайте новичку достаточно времени, и он обязательно сольет счет, обязательно! Нет таких людей, которые начинали бы трейдинг с торговли на реальном счете и не сливали бы депозит, их просто не существует! Они всегда сливают.</p><p id="e3bf5d95-67be-4da0-a9a6-91b7f134871d" class="">Но об этом не рассказывают в книгах, потому что такие книги плохо продаются! Никто не купит книгу, которая называется «<a href="https://tlap.com/forum/v-pomosch-treyderu/4/statya-van-tarp-zapisyvayte-svoi-oshibki/14597/">Ошибки</a>, которые совершает каждый <a href="http://tlap.com/kogda-perehodit-s-demo-na-realnyiy-schet/">демо</a>-трейдер». Если сформулировать все иначе и написать «Я заработал за последние 16 лет 50 миллионов долларов, и вот через что мне пришлось пройти, и вот как я с этим справился»… Такое уже может заинтересовать! Все ведь хотят заработать 50 миллионов. Но при этом люди все равно проигнорируют сообщение «не делай всех этих проблемных вещей, не занимайся саморазрушением, не пытайся компенсировать сложности реальной жизни прибыльными сделками». Это – ошибка! Потому что, очевидно, в большинстве случаев вы только потеряете деньги. И как вы себя после этого почувствуете <em>(смеется)</em>? Еще более несчастным!</p><p id="90405359-16a5-4436-a1d1-3f1f27c2cf90" class="">Так что следующие тридцать дней я посоветовал бы всем потратить на оценку самих себя. Задавайте себе неудобные вопросы! Почему вы хотите этим заниматься? А когда торгуете… Часто советуют: записывайте перед открытием сделки, как вы себя чувствуете. Но что это значит на самом деле?.. «Я чувствую воодушевление, ведь я собираюсь подзаработать»? Все так думают! Но нет, вам надо ответить искренне, докопаться до самой сути! Что я пытаюсь получить от этой сделки? «Я расстроен. Я работаю на какого-то другого человека, работаю тяжело, но получаю недостаточно денег. Я инвестирую слишком много времени, но получаю слишком мало средств. Я почти не вижу свою семью. Я ненавижу это место. Мне нужны перемены, прямо сейчас».</p><p id="57723a9d-34f4-4a50-a300-9ec64d42794b" class="">Вот это уже реальная причина! Это и надо записать. Посвятите этому следующие тридцать дней и сосредоточьтесь на процессе, которым нужно все это заменить. И вы обнаружите, что стали делать это реже. Вы начнете воспринимать сетапы более объективно и избавитесь от <a href="http://tlap.com/3-sposoba-pobedit-emotsii-v-treydinge/">эмоциональных</a> стимулов для открытия сделок. Вы сможете сказать себе: вот мой сетап, вот это я должен сделать, и плевать на результат. Процесс предписывает мне сделать это – я делаю это. Это – единственный способ добиться объективной стабильности в трейдинге.</p><p id="a0a264d5-f4db-4b9f-94ca-1b35d51b11bc" class="">— Чистая правда! Не знаю, почему, но многие трейдеры испытывают проблемы с ведением <a href="https://tlap.com/forum/v-pomosch-treyderu/4/dnevnik-treydera-vesti-torgovyy-zhurnal-ili-otmahivatsya-ot-nego/17046/">торгового журнала</a>. Мне миллион раз советовали начать это делать, но я приступил к ведению журнала только четыре недели назад. И ведь это работает! Это просто работает. На прошлой неделе, открыв одну сделку, я записал в графу «причина для входа» только одно слово: азарт. Азарт! Я отдал себе отчет в том, что данная сделка была открыта исключительно из-за азарта. Я получил в ней прибыль! Но больше я таких сделок не открывал. Так что в ведении журнала действительно что-то есть, народ! Это заставляет многое переосмыслить. Я не хочу смотреть в свой журнал и видеть, что я открыл пятнадцать сделок подряд из чистого азарта. Даже одной не хочу видеть! Даже одной оказалось для меня слишком много. Хотя это была всего лишь одна сделка из, кажется, тридцати, что я тогда анализировал. Это критически важно! Но почему-то нам, людям, очень тяжело вести журнал… Ну, за исключением вас, вы-то ведете его с шестнадцати лет! Ладно, простите, давайте продолжим, у нас осталось еще несколько последних вопросов! Какого <a href="http://tlap.com/servis-podbora-brokera/">брокера</a> и какую торговую платформу вы предпочитаете?</p><p id="a872b153-f4d6-41d4-a673-6f1d9e4561a0" class="">— Я не обсуждаю брокеров, потому что не являюсь их представителем. Но, думаю, самым крупным и известным брокерским фирмам можно доверять. Предпочтений в этом плане у меня нет! Хотя я не раз обжигался, например, на FXCM… Однажды они не исполнили мой <a href="http://tlap.com/stop-loss/">стоп-лосс</a>, и цена далеко ушла против моей позиции! Веселого в этом мало. Ладно, думаю, вы уже поняли, что FXCM мне не по душе <em>(смеется)</em>. А другие брокеры… Я живу в <a href="http://tlap.com/foreks-v-ssha/">Штатах</a>! А здесь существуют определенные запреты и ограничения. Но, как я и сказал, я не являюсь брокерским представителем, а потому не могу давать таких советов... Потратьте немного времени и изучите самых крупных, самых респектабельных брокеров… И просто поспрашивайте вокруг! У каждого трейдера есть своя страшная история про брокеров. Но одно дело совершить ошибку и винить в этом своего брокера, и совсем другое, когда фирма действительно работает против тебя… Такое ни с чем не спутаешь! Это у меня случилось с FXCM. В этом случае нужно паковать вещи и переезжать к другому брокеру!</p><p id="187998c2-3c47-4054-8f2c-82e3072c3dca" class="">— А что насчет торговой платформы?</p><p id="07eb1892-446e-4de4-b75a-0bde24a1b42e" class="">— Для обучения и своих бесплатных видео я использую <a href="http://tlap.com/metatrader-4-obzor/">MT4</a>, недавно начал применять и <a href="http://tlap.com/metatrader-5/">MT5</a>. Но свой личный трейдинг я веду через eSignal.</p><p id="f5d72f26-e074-4458-9fb8-dbc698eb468c" class="">— Что насчет вашей худшей сделки?</p><p id="5325341d-58b6-4d28-8784-312151cab489" class="">— Их было две! Одна произошла не по моей вине, FXCM не исполнили мой <a href="http://tlap.com/indikator-stoplossov/">стоп-лосс</a>. Причем там не было <a href="http://tlap.com/kak-zarabotat-na-gepah/">гэпа</a>! Цена просто проторговалась сквозь мой <a href="http://tlap.com/razvorot-ceny-posle-moego-sl/">стоп</a> и пошла дальше. А другая – та, которую я упоминал ранее, моя самая первая сделка, когда я начал торговать на реальные деньги раньше, чем следовало. Четыре недели читал книжку, потом открыл реальный <a href="http://tlap.com/tipyi-schetov-na-foreks/">счет</a> – и потерял 50% менее чем за сутки! Вот это была моя худшая сделка... Потому что я сделал то, чего делать не следовало: начал торговать на реальные деньги, не разобравшись, что я творю.</p><p id="d59e5eaa-58f4-4fae-8867-5068230c5917" class="">— Можете дать напоследок слушателям один совет?</p><p id="bfacfc3f-ae8a-4201-a68e-920eb13f648a" class="">— Не говорите о трейдинге с друзьями и семьей. Не рассказывайте им, чем вы хотите заниматься. Они никогда, никогда, никогда с вами не согласятся! У вас могут быть лучшие в мире друзья, но ни один из них, ни один не скажет вам то, что вы хотите услышать. А хотите вы услышать «я в тебя верю, я верю, что ты это сделаешь, тебя ничто не остановит, не отчаивайся, не бросай это дело, и ты достигнешь гораздо большего, чем думаешь». Нет, такого не будет. Вы услышите множество доводов в пользу того, что трейдинг нужно бросить. И сами начнете об этом думать! Каждый раз, когда вы будете сталкиваться со временными затруднениями, с выносом <a href="https://tlap.com/forum/v-pomosch-treyderu/4/strategii-kak-sryvat-chuzhie-stopy/18663/">стопа</a>, с неудачной сделкой, с затишьем на рынке и отсутствием сетапов, вы будете слышать внутри себя этот диалог с родными и близкими. Коллегам тоже не рассказывайте! Просто делайте это. Не говорите – делайте.</p><p id="d1174d13-3b5b-4115-a826-3e006f60a0eb" class="">— Окей, круто! Остался последний вопрос, который я всегда задаю своим гостям, но вы, можно сказать, на него уже ответили… Задам другой! Я уже спрашивал его у пары своих гостей. Учитывая ваш опыт, вы наверняка дадите интересный ответ! Второго января этого года <em>(2019)</em> произошло огромное движение. Некоторые пары упали на тысячи пунктов!</p><p id="dd83a78f-c2fc-41f6-a6ef-5a002264fae3" class="">— А, вы про иену?</p><p id="9b791568-151d-48d6-bc29-9122852235c2" class="">— Да-да, падение иены… Как бы вы это объяснили?</p><p id="549698d9-80ab-42e9-815f-7f2a677973e1" class="">— Точно так же <em>(смеется)</em>! Все это – корректировка цен от центробанков. Они сделали это, чтобы расстроить фонды. Взгляните на <a href="http://tlap.com/otchety-commitments-of-traders/">отчеты COT</a> по этим валютам! Сами увидите, что произошло. Центробанки подчистую вымели ликвидность крупных фондов.</p><p id="be486561-e02e-4c96-a695-ab0be7a1f62b" class="">— Окей, круто! И еще один вопрос от наших слушателей… В чем разница между вашим Mentorship и Charter Material?</p><p id="fb18bc3e-bbfa-4e75-8889-8b8c7a7b469b" class="">— Когда люди подписываются на Mentorship, они получают 12 месяцев контента. Эти уроки записаны заранее, но это – только фундамент! Mentorship включает в себя гораздо большее. А после этих 12 месяцев вы переходите в бесплатную категорию Charter Member. Charter Member – тоже часть сообщества! Я их по-прежнему учу, но учу урокам, которые недоступны тем, кто проходит первые 12 месяцев. Вы просто продолжаете обучение, но уже бесплатно.</p><p id="0005cc0d-e8eb-4991-b28a-8c6bea55bc9b" class="">— Круто. Как с вами проще всего связаться?</p><p id="2495aca0-de0e-485b-b5ea-be1ba3f0127f" class="">— Через <a href="mailto:innercircletrader@gmail.com">innercircletrader@gmail.com</a>. Или следите за мной в <a href="https://twitter.com/I_Am_ICT">твиттере</a>, @I_AM_ICT.</p><p id="d63abb98-dd75-46a0-858e-c5f4edddea58" class="">— Великолепно! Большое спасибо, Майкл! Был очень рад принимать вас у себя на шоу. Спасибо за все, чем вы с нами сегодня поделились! Все ссылки я прикреплю к описанию выпуска, чтобы найти их, просто введите «Michael» в строку поиска на tradingnut.com. До скорой связи! Желаю всем своим слушателям <a href="https://tlap.com/forum/v-pomosch-treyderu/4/motivatsiya-3-sposoba-kupit-schaste/16365/">счастья</a> и <a href="https://tlap.com/forum/v-pomosch-treyderu/4/nil-fuller-dlya-dostizheniya-uspeha-v-treydinge-vam-neobhodimo-ovladet-tem-chto-yavlyaetsya-%C2%ABsamym-glavnym%C2%BB-dlya-vas/19415/">успеха в трейдинге</a>!</p><p id="38613469-c513-49d9-b2be-bbffccf5443b" class="">Переведено специально</p><p id="02c15754-30d6-494b-95d8-5446b9144a01" class=""><strong>Изменено 1 апреля, 2020 пользователем ju.vskv</strong></p><figure id="ffff5730-1d4d-47e4-a348-938aa0f2192d" class="image"><a href="%5BICT%5D%20%D0%9C%D0%B0%D0%B8%CC%86%D0%BA%D0%BB%20%D0%A5%D0%B0%D0%B4%D0%B4%D0%BB%D1%81%D1%82%D0%BE%D0%BD%20-%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%D0%B8%CC%86%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BF%D0%B5%D0%BD%D1%81%D0%B8%D1%8E%20%D0%B2%20%D1%81%D0%BE%2093f52d18756a49bc8acdcbf4f5804479/801400085_.jpg.d1da44cc215f5a499ff019b78148f9f1.jpg"><img style="width:531px" src="%5BICT%5D%20%D0%9C%D0%B0%D0%B8%CC%86%D0%BA%D0%BB%20%D0%A5%D0%B0%D0%B4%D0%B4%D0%BB%D1%81%D1%82%D0%BE%D0%BD%20-%20%D0%9A%D0%B0%D0%BA%20%D0%B2%D1%8B%D0%B8%CC%86%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BF%D0%B5%D0%BD%D1%81%D0%B8%D1%8E%20%D0%B2%20%D1%81%D0%BE%2093f52d18756a49bc8acdcbf4f5804479/801400085_.jpg.d1da44cc215f5a499ff019b78148f9f1.jpg"/></a></figure></div></article></body></html>
